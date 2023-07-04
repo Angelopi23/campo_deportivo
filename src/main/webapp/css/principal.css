@@ -1,0 +1,242 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 04/07/2023, 11:38:11 AM
+    Author     : LENOVO
+*/
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+
+body{
+    width: 100%;
+    height: 97vh;
+    font-family: "Baloo 2", sans-serif;
+     background-color: #000000;
+  color: #ffffff;
+  
+    }
+
+
+
+                                                                  /*NAVBAR*/
+#navbar{
+    background-color: #000000;
+    padding: 20px;
+}
+
+.img-navbar{
+   width: 50px;
+}
+
+.navbar-brand{
+    font-size: 25px;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    transition: 0.5s ease;
+    margin: 0px 5px;
+}
+
+.navbar-brand span{
+    color:#20F25B;
+}
+
+.navbar-brand:hover{
+    color: white;
+}
+
+
+.nav-item .nav-link{
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    transition: 0.5s ease;
+    margin: 0px 5px;
+}
+
+.nav-item .nav-link:hover{
+    color: #7FFF00;
+}
+
+/*las 3 rallitas*/
+.navbar-toggler span{
+    color: white;
+}
+
+
+
+                                            /*EL HOME*/
+.home{
+    padding-top: 95px;
+     padding-bottom: 230px;
+  display: flex;
+  justify-content: center;
+}
+
+
+.home img{
+    width: 100%;
+    position: absolute;
+  z-index: -1;
+  height: auto; /* Ajusta esta propiedad para mantener la proporciÃ³n de la imagen */
+  max-height: 90%;
+}
+
+.home .portada{
+  color:#ffffff ;
+  text-align: center;
+  padding-top: 9%;
+}
+
+.home .portada h1{
+    font-size: 360%;
+}
+
+.home .portada span{
+     color:#20F25B ;
+}
+
+.home .img-pelota{
+   width: 50px;
+padding-top: 430px;
+}
+
+
+                                                        /*ACERCA DE NOSOTROS*/
+
+ .acerca{
+      display: flex;
+    justify-content: center;
+    align-items: center;
+     padding-top: 100px;
+    padding-bottom: 125px;
+   
+ }
+ 
+ .acerca h2{
+  padding-left: 20px;  
+  color:#20F25B;
+}
+ 
+.acerca h3{
+
+    padding: 10px;
+     text-align: justify;
+  color:#ffffff;
+}
+
+
+
+
+.acerca .imagen-acerca{
+    padding: 20px;
+  
+}
+.acerca img{
+      border-radius: 4rem;
+}
+
+
+                                                    /*SELECCION DE CAMPOS*/
+
+
+.campos{
+     display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    grid-gap: 20px;
+   background-image: url("../imagenes/fondo-campos.jpg"); /* Reemplaza "ruta_de_la_imagen" con la ruta correcta de la imagen */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.card{
+    background: #000000;
+    color: #ffffff;
+}
+.card-title span{
+    color:#20F25B;
+}
+
+.card-text .img-horario{
+    width: 100px;
+   
+}
+
+ .card-text{
+     font-size: 25px;
+}
+
+
+.inferior{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    padding: 10px;
+}
+
+.inferior h2 span{
+    color: #20F25B;
+    
+}
+
+.btn:hover{
+    background: #20F25B;
+    color:#000000;
+}
+
+
+                                                            /*LA PARTE DEL FOOTER*/
+.footer{
+    background:#20F25B;
+    color: #000000;
+    display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        text-align: center;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.redes{
+    text-align: justify;
+    padding-left: 20px;
+    padding: 10px;
+}
+
+.footer h3{
+    font-size: 25px;
+}
+
+.redes h3{
+    padding-left: 45px; 
+}
+
+.redes a img{
+    width: 40px;
+}
+
+.copyright{
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
