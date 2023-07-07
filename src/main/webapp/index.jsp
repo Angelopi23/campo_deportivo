@@ -87,7 +87,7 @@
         
  <div class="card" style="width: 18rem;">
  <h5 class="title"> <strong> CAMPO 1 </strong> </h5>
-  <img src="imagenes/campos.png" class="card-img-top" >
+ <a href="campo1.jsp"><img src="imagenes/campos.png" class="card-img-top" ></a>
   <div class="card-body">
       <h5 class="card-title">  <strong> N° <span> JUGADORES </span>11 </strong> </h5>
     <p class="card-text"> <strong>DIA  <img src="imagenes/dia11.png" class="img-horario" alt="">   </strong> </p>
@@ -98,7 +98,7 @@
         
   <div class="card" style="width: 18rem;">
    <h5 class="title"> <strong> CAMPO 2 </strong> </h5>
-  <img src="imagenes/campos.png" class="card-img-top" >
+  <a href="campo2.jsp"><img src="imagenes/campos.png" class="card-img-top" ></a>
   <div class="card-body">
     <h5 class="card-title"> <strong> N° <span> JUGADORES </span>9 </strong></h5>
       <p class="card-text"> <strong>DIA  <img src="imagenes/dia9.png" class="img-horario" alt="">   </strong> </p>
@@ -109,7 +109,7 @@
         
    <div class="card" style="width: 18rem;">
      <h5 class="title"> <strong> CAMPO 3 </strong> </h5>
-  <img src="imagenes/campos.png" class="card-img-top" >
+  <a href="campo3.jsp"><img src="imagenes/campos.png" class="card-img-top" ></a>
   <div class="card-body">
     <h5 class="card-title"> <strong> N° <span> JUGADORES </span>8</strong></h5>
      <p class="card-text"> <strong>DIA  <img src="imagenes/dia8.png" class="img-horario" alt="">   </strong> </p>
