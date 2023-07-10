@@ -80,17 +80,22 @@ body{
 
                                             /*EL HOME*/
 .home{
-    padding-top: 95px;
+    padding-top: 300px;
      padding-bottom: 230px;
   display: flex;
   justify-content: center;
+   background-image: url("../imagenes/img-home.png"); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+     z-index: -1;
+     width: 100%;
 }
 
 
 .home img{
     width: 100%;
     position: absolute;
-  z-index: -1;
   height: auto; /* Ajusta esta propiedad para mantener la proporciÃ³n de la imagen */
   max-height: 90%;
 }
@@ -98,11 +103,12 @@ body{
 .home .portada{
   color:#ffffff ;
   text-align: center;
-  padding-top: 9%;
+transform: translate(0, -35%);
 }
 
 .home .portada h1{
     font-size: 360%;
+   
 }
 
 .home .portada span{
@@ -111,7 +117,7 @@ body{
 
 .home .img-pelota{
    width: 50px;
-padding-top: 430px;
+padding-top: 200px;
 }
 
 
@@ -153,17 +159,18 @@ padding-top: 430px;
                                                     /*SELECCION DE CAMPOS*/
 
 
-.campos{
+.campos-contenedor{
      display: grid;
-    grid-template-columns: repeat(2, 1fr);
+grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+   width: 100%;
     justify-items: center;
-    align-items: center;
     text-align: center;
-    grid-gap: 20px;
-   background-image: url("../imagenes/fondo-campos.jpg"); /* Reemplaza "ruta_de_la_imagen" con la ruta correcta de la imagen */
+  gap: 20px;
+   background-image: url("../imagenes/fondo-campos.jpg"); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+  
 }
 
 
@@ -199,10 +206,151 @@ padding-top: 430px;
     
 }
 
-.btn:hover{
+.btn-primary:hover{
     background: #20F25B;
     color:#000000;
+      box-shadow: 0 0 1rem #20F25B; 
+      font-weight: bold;
+      border: 1px solid #20F25B; 
 }
+.btn-secondary:hover{
+     background: #20F25B;
+    color:#000000;
+      box-shadow: 0 0 1rem #20F25B; 
+      font-weight: bold;
+      border: 1px solid #20F25B; 
+}
+                                                /*ventana modal DE RESERVA DE CAMPOS*/
+   
+.btn-close{
+     background-color: #ffffff;
+  }
+.modal-title span{
+    color: #20F25B;
+}
+.modal-content{/*fondo del modal*/
+    background:#000000;
+}
+
+.modal-body .seleccion{
+    text-align: center;
+}
+
+/*edicion de los inputs*/
+.form{
+    width: 90%;
+    padding: 10px;
+    background: black;
+     color: white;
+     border-radius: 6px;
+     margin-bottom: 4px;
+     font-family: sans-serif;
+     border: 1px solid white;
+}
+
+ input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+  }
+
+.modal-body label{
+    width: 100%;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 10px 0;
+    color: #ffffff;
+   padding: 5px;
+   text-align: justify;
+}
+
+.modal-body select{
+    background: #000000;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 10px 0;
+    color: #ffffff;
+   padding: 5px;
+   text-align: justify;
+}
+
+.TotalPagar{
+    width: 30%;
+    padding: 10px;
+    background: black;
+     color: white;
+     border-radius: 6px;
+ font-weight: bold;
+     border: 1px solid white;  
+     text-align: center;
+     font-size: 20px;
+}
+
+.Total-container{
+      display: flex;
+    align-items: center;
+}
+ .Total-container label {
+    margin-right: 5px;
+    font-weight: bold;
+  }
+ 
+
+                                                        /*botones de pago*/
+ 
+.F-pago{
+      display: flex;
+      align-items: center;
+     
+  }
+  
+ 
+  #forma-pago-checkbox {
+  background-color: #262EE1;
+}
+
+ .pago-contenedor img{
+     width: 50%;
+ }
+ .pago-contenedor{
+       display: flex;
+    align-items: center;
+ }
+ .pago-contenedor button{
+     background: #000000;
+ }
+ .pago-contenedor button:hover{
+     background: #ffffff;
+
+ }
+                                                        /*BOTON DE CHECK CUANDO SE PRESIONE EL MET PAGO*/
+ .campos-contenedor input[type="checkbox"] {
+  /* Estilos personalizados */
+  width: 20px;
+  height: 20px;
+  color: #20F25B;
+  background-color: #20F25B;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  /* Otros estilos */
+  /* ... */
+}
+
+/*EDICION DE MODAL DE PAGOS*/
+#modalyapeLabel2{
+ color:#B11DED;   
+ font-weight: bold;
+}
+#modalplinLabel2{
+ color:#7ae6da;   
+ font-weight: bold;
+}
+
+#modalefectivoLabel2{
+    color:#F1F10B;   
+ font-weight: bold;
+}
+ 
 
 
                                                             /*LA PARTE DEL FOOTER*/
@@ -240,3 +388,6 @@ padding-top: 430px;
     text-align: center;
     align-items: center;
 }
+
+/*RESPONSIVE*/
+

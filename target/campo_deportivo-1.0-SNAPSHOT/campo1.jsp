@@ -28,13 +28,13 @@
           <div class="collapse navbar-collapse" id="mynavbar">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link" href="#HOME">HOME</a>
+                <a class="nav-link" href="index.jsp">HOME</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#ACERCA">ACERCA DE NOSOTROS</a>
+                <a class="nav-link" href="index.jsp">ACERCA DE NOSOTROS</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#CAMPOS">CAMPOS</a>
+                <a class="nav-link" href="index.jsp">CAMPOS</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link me-3" href="ubicanos.jsp">UBICACION</a>

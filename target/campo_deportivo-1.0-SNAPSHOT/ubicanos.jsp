@@ -67,9 +67,9 @@
                    
                     <div class="derecha">
                         <h4> <strong> HORARIOS </strong></h4>
-                         <p>lunes, martes, miercoles, jueves, viernes 6:00 a 0:00 AM</p>
-                         <p> SABADO, DOMINGO 6:00 A 0:00 AM</p>
-                         <p>FERIADOS: 6:00 A 0:00 AM</p>
+                         <p>lunes, martes, miercoles, jueves, viernes 10:00 AM a 0:00 AM</p>
+                         <p> SABADO, DOMINGO 10:00 AM a 0:00 AM</p>
+                         <p>FERIADOS: 10:00 AM A 0:00 AM</p>
                     </div>
                     
                 </div>        

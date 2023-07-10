@@ -127,7 +127,6 @@ h2 span{
 }
 .detalle{
     font-weight: bold;
-   
  text-align: center; 
 }
 .derecha h4{
@@ -141,3 +140,40 @@ h2 span{
     line-height: 0.5;
 }
 
+
+                /*RESPONSIVE*/
+
+@media  (max-width: 1200px) {
+  .ubicar-contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra horizontalmente el contenido */
+  align-items: center; /* Centra verticalmente el contenido */
+    justify-content: center;
+  }
+  
+  .ubicar h2{
+   display: flex;
+  justify-content: center; /* Centra horizontalmente el contenido */
+  align-items: center; /* Centra verticalmente el contenido */
+    justify-content: center;
+    
+}
+
+  
+  .detalle-contenedor {
+    margin-top: 40px; /* Ajusta el margen según tus necesidades */
+     padding-left: 0;
+  }
+  
+   .imgU {
+    display: none;
+  }
+}
+
+body{
+    background-image:  url("../imagenes/fondoU.jpg"); 
+     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

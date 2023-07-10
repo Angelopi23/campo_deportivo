@@ -1,2 +1,3 @@
 com\mycompany\campo_deportivo\resources\JavaEE8Resource.class
+config\Conexion.class
 com\mycompany\campo_deportivo\JAXRSConfiguration.class
