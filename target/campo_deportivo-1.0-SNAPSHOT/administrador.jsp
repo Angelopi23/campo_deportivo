@@ -17,9 +17,17 @@
     </head>
     <body>
         
+    <!--NAVBAR  bOOSTRAP-->
+    <nav class="navbar navbar-expand-xl fixed-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand"  id="logo">CAMPOS <img src="imagenes/pelota-navbar.png" class="img-navbar" alt="">   <span> DEPORTIVOS </span> </a>
+        </div>
+      </nav>
+    <!--NAVBAR-->
+     
         <div class="container main">
             <div class="row">
-                <div class="col-md-6 side-image">
+                <div class="col-md-6 side-image img-form">
                     <!-------Image-------->        
                 </div>
                 <div class="col-md-6 right">

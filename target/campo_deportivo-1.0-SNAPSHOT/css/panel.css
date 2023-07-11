@@ -1,0 +1,92 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 04/07/2023, 11:38:11 AM
+    Author     : LENOVO
+*/
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+
+body{
+    width: 100%;
+    height: 97vh;
+    font-family: "Baloo 2", sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+  
+    }
+    
+#navbar{
+    background-color: #000000;
+    padding: 20px;
+}
+
+.img-navbar{
+   width: 50px;
+}
+
+.navbar-brand{
+    font-size: 25px;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    transition: 0.5s ease;
+    margin: 0px 5px;
+}
+
+.navbar-brand span{
+    color:#20F25B;
+}
+.navbar-brand:hover{
+    color: white;
+}
+                                                    /*SELECCION FORMULARIO*/
+
+
+
+
+
+                                                    /*SELECCION FOOTER*/
+
+.inferior{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    padding: 10px;
+}
+
+.inferior h2 span{
+    color: #20F25B;
+    
+}
+
+.person-icon {
+      width: 50px;
+      height: 50px;
+      /*background-image: url("../imagenes/icono-person.png");*/
+      
+}
+
+
+@media (max-width: 767px) {
+  .person_icon {
+    display: none;
+  }
+}
+
+
+
+
