@@ -27,7 +27,7 @@
           <div class="collapse navbar-collapse" id="mynavbar">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link" href="index.jsp">HOME</a>
+                <a class="nav-link" href="index.jsp">INICIO</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="index.jsp">ACERCA DE NOSOTROS</a>

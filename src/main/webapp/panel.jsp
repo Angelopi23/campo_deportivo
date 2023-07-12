@@ -1,8 +1,4 @@
-<%-- 
-    Document   : administrador
-    Created on : 7 jul. 2023, 18:11:45
-    Author     : Angelo
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -37,8 +33,8 @@
                                 </div>
                             </a>    
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Perfil</a></li>
-                                <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+                                <li><a class="dropdown-item" href="#">${usuario}</a></li>
+                                <li><a class="dropdown-item" href="controlador?accion=Salir">Cerrar sesión</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -46,14 +42,19 @@
             </div>
         </nav>
         <!--NAVBAR-->
-
-        <div class="container">
+     <!--    <div class="container">
             <div class="row">
                 <div class="col-4 bg-white"><div class="person-icon"></div></div>
                 <div class="col-4 bg-white"><div class="person-icon"></div></div>
                 <div class="col-4 bg-white"><div class="person-icon"></div></div>
             </div>
-        </div>
+        </div>-->
+     <div  class="titulo">
+     <h1> <strong>PEDIDOS REALIZADOS </strong> </h1>
+           </div>
+     
+        <h2>hola bienvenido ${usuario} </h2>
+            <h2>hola bienvenido  ${nombres} </h2>
 
         <div class="inferior">
             <h2> <strong> <span>¡HARTO CHOCOLATE </span> Y BUEN FULBITO!</strong> </h2>

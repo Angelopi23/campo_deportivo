@@ -24,37 +24,42 @@
         </div>
       </nav>
     <!--NAVBAR-->
-     
+    
+    
         <div class="container main">
+     <form action="controlador" >
             <div class="row">
                 <div class="col-md-6 side-image img-form">
                     <!-------Image-------->        
                 </div>
+                
                 <div class="col-md-6 right">
                      <div class="input-box">
                         <header>Iniciar Sesión</header>
                         <div class="input-field">
-                            <input type="text" class="input" id="usuario" required autocomplete="off">
+                            <input type="text" class="input" id="usuario" name="usuario" required autocomplete="off">
                             <label for="usuario">Usuario</label>
                         </div>
                         <div class="input-field">
-                            <input type="password" class="input" id="password" required>
+                            <input type="password" class="input" id="password" name="password" required>
                             <label for="password">Contraseña</label>
                         </div>
                         <div class="input-field">
-                            <input type="submit" class="submit" value="Login">
+                            <input type="submit" class="submit" name="accion" value="Ingresar">
                             
                         </div>
                      </div>
                 </div>
             </div>
+                 
+      </form>
         </div>
     
          <div class="inferior">
             <h2> <strong> <span>¡HARTO CHOCOLATE </span> Y BUEN FULBITO!</strong> </h2>
         </div>
 
-        
+     
 
         
         

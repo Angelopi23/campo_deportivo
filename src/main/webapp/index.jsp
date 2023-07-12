@@ -1,8 +1,3 @@
-<%-- 
-    Document   : index
-    Created on : 04/07/2023, 11:35:51 AM
-    Author     : LENOVO
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -142,7 +137,7 @@
         
         <label for="usuario">TURNO</label>
       <select id="turno" name="turno" onchange="calcularTotal()">
-          <option value="150">Dia</option>
+           <option value="150">Dia</option>
           <option value="200">Noche</option>
        </select>
       <label for="usuario">CUANTAS HORAS DESEAS RESERVAR</label>

@@ -1,3 +1,5 @@
-com\mycompany\campo_deportivo\resources\JavaEE8Resource.class
+admin\adminDAO.class
+controlador\controlador.class
 config\Conexion.class
-com\mycompany\campo_deportivo\JAXRSConfiguration.class
+admin\validar.class
+admin\administrador.class
