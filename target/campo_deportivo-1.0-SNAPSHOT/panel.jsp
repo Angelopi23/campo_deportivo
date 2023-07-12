@@ -33,13 +33,11 @@
                                 </div>
                             </a>    
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-<<<<<<< HEAD
+
                                 <li><a class="dropdown-item" href="#">${usuario}</a></li>
                                 <li><a class="dropdown-item" href="controlador?accion=Salir">Cerrar sesión</a></li>
-=======
-                                <li><a class="dropdown-item" href="#">Perfil</a></li>
-                                <li><a class="dropdown-item" href="administrador.jsp">Cerrar sesión</a></li>
->>>>>>> 0c59bc2f61a6e9b0d14aebac8095bc877d75be0e
+
+
                             </ul>
                         </li>
                     </ul>
@@ -47,7 +45,21 @@
             </div>
         </nav>
         <!--NAVBAR-->
-     <!--    <div class="container">
+        
+        
+        
+        
+         <div  class="titulo">
+     <h1> <strong>PEDIDOS REALIZADOS </strong> </h1>
+           </div>
+     
+        <h2>hola bienvenido ${usuario} </h2>
+            <h2>hola bienvenido  ${nombres} </h2>
+        
+        
+        
+    
+     <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6">
                     <div class="m-2 bg-white">
@@ -202,13 +214,8 @@
                     </div>
                 </div>
             </div>
-        </div>-->
-     <div  class="titulo">
-     <h1> <strong>PEDIDOS REALIZADOS </strong> </h1>
-           </div>
-     
-        <h2>hola bienvenido ${usuario} </h2>
-            <h2>hola bienvenido  ${nombres} </h2>
+        </div>
+    
 
         <div class="inferior">
             <h2> <strong> <span>¡HARTO CHOCOLATE </span> Y BUEN FULBITO!</strong> </h2>

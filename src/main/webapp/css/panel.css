@@ -57,7 +57,7 @@ body{
 }
                                                     /*SELECCION FORMULARIO*/
 
-<<<<<<< HEAD
+
    .titulo h1{
        display: flex;
     text-align: center;
@@ -70,7 +70,7 @@ body{
      
    }
 
-=======
+
  label {
       font-weight: bold;
       color: #20F25B;
@@ -98,7 +98,7 @@ body{
         background: none;
     }
    
->>>>>>> 0c59bc2f61a6e9b0d14aebac8095bc877d75be0e
+
                                                     /*SELECCION FOOTER*/
 
 .inferior{
