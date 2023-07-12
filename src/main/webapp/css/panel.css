@@ -57,6 +57,7 @@ body{
 }
                                                     /*SELECCION FORMULARIO*/
 
+<<<<<<< HEAD
    .titulo h1{
        display: flex;
     text-align: center;
@@ -69,6 +70,35 @@ body{
      
    }
 
+=======
+ label {
+      font-weight: bold;
+      color: #20F25B;
+      padding-right: 4px;
+    }
+    
+    input[type="text"] {
+     border: none;
+     background: none;
+    }
+    .datos{
+        display: flex;
+        padding: 4px;
+        overflow: hidden; 
+    }
+    .estado{
+        display: flex;
+        padding: 4px;
+        background: #8C8C8C;
+    }
+    .estado label{
+        color: black
+    }
+    .estado input{
+        background: none;
+    }
+   
+>>>>>>> 0c59bc2f61a6e9b0d14aebac8095bc877d75be0e
                                                     /*SELECCION FOOTER*/
 
 .inferior{

@@ -27,14 +27,19 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <div class="person_icon" style="width: 40px; height: 40px; overflow: hidden; background-size: cover;">
                                     <img src="imagenes/icono-person.png" style="max-width: 100%; height: auto;" alt="alt"/>
                                 </div>
                             </a>    
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+<<<<<<< HEAD
                                 <li><a class="dropdown-item" href="#">${usuario}</a></li>
                                 <li><a class="dropdown-item" href="controlador?accion=Salir">Cerrar sesión</a></li>
+=======
+                                <li><a class="dropdown-item" href="#">Perfil</a></li>
+                                <li><a class="dropdown-item" href="administrador.jsp">Cerrar sesión</a></li>
+>>>>>>> 0c59bc2f61a6e9b0d14aebac8095bc877d75be0e
                             </ul>
                         </li>
                     </ul>
@@ -44,9 +49,158 @@
         <!--NAVBAR-->
      <!--    <div class="container">
             <div class="row">
-                <div class="col-4 bg-white"><div class="person-icon"></div></div>
-                <div class="col-4 bg-white"><div class="person-icon"></div></div>
-                <div class="col-4 bg-white"><div class="person-icon"></div></div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="m-2 bg-white">
+                        <form class="p-3">
+                            <div class="datos">
+                                <label for="nombre">Nombre:</label>
+                                <input type="text" id="nombre" name="nombre" disabled>
+                            </div>
+                            <div class="datos">
+                                <label for="apellido">Apellido:</label>
+                                <input type="text" id="apellido" name="apellido" disabled><br>
+                            </div>
+                            <div class="datos">
+                                <label for="dni">DNI:</label>
+                                <input type="text" id="dni" name="dni" disabled><br>
+                            </div>
+                            <div class="datos">
+                                <label for="numero">Número:</label>
+                                <input type="text" id="numero" name="numero" disabled><br>
+                            </div>
+                            <div class="datos">
+                                <label for="fecha">Fecha:</label>
+                                <input type="text" id="fecha" name="fecha" disabled><br>
+                            </div>
+                            <div class="datos">
+                                <label for="horas">Horas en cancha:</label>
+                                <input type="text" id="horas" name="horas" disabled><br>
+                            </div>
+                            <div class="datos">
+                                <label for="campo">Número de campo:</label>
+                                <input type="text" id="campo" name="campo" disabled><br>
+                            </div>
+                            <div class="datos">
+                                <label for="precio">Precio total:</label>
+                                <input type="text" id="precio" name="precio" disabled><br>
+                            </div>
+                            <div class="datos">
+                                <label for="metodo">Método de pago:</label>
+                                <input type="text" id="metodo" name="metodo" disabled><br>
+                            </div>
+                            <div class="estado rounded-2">
+                                <label for="metodo">Estado:</label>
+                                <input type="text" id="metodo" name="metodo" disabled>
+                            </div>
+                            <div class="p-3">
+                                <button type="button" class="rounded-2 btn btn-warning">Actualizar</button>
+                                <button type="button" class="rounded-2 btn btn-danger">Eliminar</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="m-2 bg-white">
+                        <form class="p-3">
+                            <div class="datos">
+                                <label for="nombre">Nombre:</label>
+                                <input type="text" id="nombre" name="nombre" disabled>
+                            </div>
+                            <div class="datos">
+                                <label for="apellido">Apellido:</label>
+                                <input type="text" id="apellido" name="apellido" disabled><br>
+                            </div>
+                            <div class="datos">
+                                <label for="dni">DNI:</label>
+                                <input type="text" id="dni" name="dni" disabled><br>
+                            </div>
+                            <div class="datos">
+                                <label for="numero">Número:</label>
+                                <input type="text" id="numero" name="numero" disabled><br>
+                            </div>
+                            <div class="datos">
+                                <label for="fecha">Fecha:</label>
+                                <input type="text" id="fecha" name="fecha" disabled><br>
+                            </div>
+                            <div class="datos">
+                                <label for="horas">Horas en cancha:</label>
+                                <input type="text" id="horas" name="horas" disabled><br>
+                            </div>
+                            <div class="datos">
+                                <label for="campo">Número de campo:</label>
+                                <input type="text" id="campo" name="campo" disabled><br>
+                            </div>
+                            <div class="datos">
+                                <label for="precio">Precio total:</label>
+                                <input type="text" id="precio" name="precio" disabled><br>
+                            </div>
+                            <div class="datos">
+                                <label for="metodo">Método de pago:</label>
+                                <input type="text" id="metodo" name="metodo" disabled><br>
+                            </div>
+                            <div class="estado rounded-2">
+                                <label for="metodo">Estado:</label>
+                                <input type="text" id="metodo" name="metodo" disabled>
+                            </div>
+                            <div class="p-3">
+                                <button type="button" class="rounded-2 btn btn-warning">Actualizar</button>
+                                <button type="button" class="rounded-2 btn btn-danger">Eliminar</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="m-2 bg-white">
+                        <form class="p-3">
+                            <div class="datos">
+                                <label for="nombre">Nombre:</label>
+                                <input type="text" id="nombre" name="nombre" disabled>
+                            </div>
+                            <div class="datos">
+                                <label for="apellido">Apellido:</label>
+                                <input type="text" id="apellido" name="apellido" disabled><br>
+                            </div>
+                            <div class="datos">
+                                <label for="dni">DNI:</label>
+                                <input type="text" id="dni" name="dni" disabled><br>
+                            </div>
+                            <div class="datos">
+                                <label for="numero">Número:</label>
+                                <input type="text" id="numero" name="numero" disabled><br>
+                            </div>
+                            <div class="datos">
+                                <label for="fecha">Fecha:</label>
+                                <input type="text" id="fecha" name="fecha" disabled><br>
+                            </div>
+                            <div class="datos">
+                                <label for="horas">Horas en cancha:</label>
+                                <input type="text" id="horas" name="horas" disabled><br>
+                            </div>
+                            <div class="datos">
+                                <label for="campo">Número de campo:</label>
+                                <input type="text" id="campo" name="campo" disabled><br>
+                            </div>
+                            <div class="datos">
+                                <label for="precio">Precio total:</label>
+                                <input type="text" id="precio" name="precio" disabled><br>
+                            </div>
+                            <div class="datos">
+                                <label for="metodo">Método de pago:</label>
+                                <input type="text" id="metodo" name="metodo" disabled><br>
+                            </div>
+                            <div class="estado rounded-2">
+                                <label for="metodo">Estado:</label>
+                                <input type="text" id="metodo" name="metodo" disabled>
+                            </div>
+                            <div class="p-3">
+                                <button type="button" class="rounded-2 btn btn-warning">Actualizar</button>
+                                <button type="button" class="rounded-2 btn btn-danger">Eliminar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>-->
      <div  class="titulo">
