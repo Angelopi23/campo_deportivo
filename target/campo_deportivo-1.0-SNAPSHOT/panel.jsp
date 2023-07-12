@@ -38,7 +38,7 @@
                             </a>    
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="#">Perfil</a></li>
-                                <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+                                <li><a class="dropdown-item" href="administrador.jsp">Cerrar sesión</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -198,7 +198,6 @@
                                 <button type="button" class="rounded-2 btn btn-warning">Actualizar</button>
                                 <button type="button" class="rounded-2 btn btn-danger">Eliminar</button>
                             </div>
-
                         </form>
                     </div>
                 </div>
