@@ -53,10 +53,33 @@ body{
 }
                                                     /*SELECCION FORMULARIO*/
 
-
-
-
-
+ label {
+      font-weight: bold;
+      color: #20F25B;
+      padding-right: 4px;
+    }
+    
+    input[type="text"] {
+     border: none;
+     background: none;
+    }
+    .datos{
+        display: flex;
+        padding: 4px;
+        overflow: hidden; 
+    }
+    .estado{
+        display: flex;
+        padding: 4px;
+        background: #8C8C8C;
+    }
+    .estado label{
+        color: black
+    }
+    .estado input{
+        background: none;
+    }
+   
                                                     /*SELECCION FOOTER*/
 
 .inferior{
