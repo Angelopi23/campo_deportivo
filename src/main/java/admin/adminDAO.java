@@ -15,12 +15,12 @@ public class adminDAO implements validar{
     PreparedStatement ps;
     ResultSet rs;
    
-    PreparedStatement pnom;
+   
     
     @Override
     public int validar(administrador admin) {
          int r=0;
-      String sql="Select * from administrador where usuario=? and password=? ";
+     String sql = "SELECT * FROM administrador WHERE usuario = ? AND password = ?";
      
       try{
           con=cn.getConnection();
@@ -32,6 +32,8 @@ public class adminDAO implements validar{
           
           
           rs=ps.executeQuery();
+          
+        
           while(rs.next()){
               r=r+1;
               admin.setUsuario(rs.getString("usuario"));
@@ -50,7 +52,7 @@ public class adminDAO implements validar{
       
     }
     
-    
+
     
     
 }

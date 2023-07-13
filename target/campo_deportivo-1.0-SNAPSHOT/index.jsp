@@ -1,3 +1,13 @@
+<%@page import="principal.tipoTurno1" %>
+<%@page import="principal.tipoTurno2" %>
+<%@page import="principal.tipoTurno3" %>
+<%@page import="principal.tipoTurno4" %>
+<%@page import="principal.tipoTurno5" %>
+<%@page import="principal.tipoTurno6" %>
+<%@page import="java.util.HashMap" %>
+<%@page import="principal.tipoHoras" %>
+<%@page import="principal.tipoHorarios" %>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -105,7 +115,7 @@
     <p class="card-text"> <strong>DIA  <img src="imagenes/dia11.png" class="img-horario" alt="">   </strong> </p>
     <p class="card-text"> <strong> NOCHE  <img src="imagenes/noche11.png" class="img-horario" alt="">   </strong></p>
    <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mimodal">RESERVAR</button>-->
-   <button class="btn btn-primary" data-bs-target="#modalreserva" data-bs-toggle="modal">RESERVAR</button>
+   <button class="btn btn-primary" data-bs-target="#modalreserva" data-bs-toggle="modal" >RESERVAR</button>
                                              
 
                                        <!--VENTANA MODAL-->
@@ -119,9 +129,10 @@
         </div>
         <div class="modal-body">
               
-      <form action="ReservaServlet" method="post">
+      <form action="sr_reserva" method="post">
           
-        <label class="seleccion" for="usuario">CAMPO SELECCIONADO 1</label>
+      <label class="seleccion" for="usuario">CAMPO SELECCIONADO 1</label>
+      <input type="text" class="Ncampo" name="campo_seleccionado" value="campo 1" id="campo_seleccionado" hidden> <!--SE MANTIENE OCULTO PARA EL USUARIO, NOS MANDARA A LA BD QUE ES EL N° DE CAMPO -->
       <label  for="usuario">NOMBRES</label>
       <input  class="form"  type="text" name="nombres"  placeholder="Ingrese su nombre" required="" pattern="[a-zA-Z]+">  <!--required para que no envie formulario vacio--> <!--pattern para pedir que llene algo especifico-->
       <label for="usuario">APELLIDOS</label>
@@ -136,17 +147,27 @@
         
         
         <label for="usuario">TURNO</label>
-      <select id="turno" name="turno" onchange="calcularTotal()">
-           <option value="150">Dia</option>
-          <option value="200">Noche</option>
+      <select id="turno" name="id_turno" onchange="calcularTotal()">
+    <%		
+   tipoTurno1 tipoturno1=new tipoTurno1();
+    HashMap<String,String> drop = tipoturno1.drop_sangre();
+  for(String i: drop.keySet()){
+  out.println(" <option value='"+ i +"'>"+ drop.get(i)  +"</option>");
+  }
+ %>
        </select>
+        
+        
+        
       <label for="usuario">CUANTAS HORAS DESEAS RESERVAR</label>
-       <select id="horas" name="horas" onchange="calcularTotal()" >
-          <option value="1">1 hora</option>
-          <option value="2">2 horas</option>
-          <option value="3">3 horas</option>
-          <option value="4">4 horas</option>
-          <option value="5">5 horas</option>
+       <select id="horas" name="id_horas" onchange="calcularTotal()" >
+  <%		
+   tipoHoras tipohoras=new tipoHoras();
+    HashMap<String,String> h = tipohoras.h_horas();
+  for(String i: h.keySet()){
+  out.println(" <option value='"+ i +"'>"+ h.get(i)  +"</option>");
+  }
+ %>
        </select>
       <div class="Total-container">
        <label for="usuario">TOTAL A PAGAR: </label>
@@ -157,46 +178,49 @@
        <input class="form" type="date" name="date" id="fecha">
        
        <label for="usuario">ELIGE TU HORARIO</label> <br>
-       <select id="horario" name="horario" >
-          <option value="">10 AM</option>
-          <option value="">11 AM</option>
-          <option value="">12 PM</option>
-          <option value="">1 PM</option>
-          <option value="">2 PM</option>
+       <select id="horario" name="id_horario" >
+          
+   <%		
+   tipoHorarios tipohorarios=new tipoHorarios();
+    HashMap<String,String> horar = tipohorarios.horar_horario();
+  for(String i: horar.keySet()){
+  out.println(" <option value='"+ i +"'>"+ horar.get(i)  +"</option>");
+  }
+ %>
        </select>
        
        <div class="F-pago">
        <label for="usuario"  id="forma-pago-label">FORMA DE PAGO</label>
          <div class="form-check">
-         <input class="form-check-input" type="checkbox" value="" id="forma-pago-checkbox"  disabled>
+         <input class="form-check-input" type="checkbox" value="" id="forma-pago-checkbox" name="F_pago" disabled>
         </div>
          
          </div>
        
        <div class="pago-contenedor" >
-       <button type="button" class="btn btn-yape" data-bs-toggle="modal"  data-bs-target="#modalyape"  onclick="marcarCheckbox()">  
-           <img src="imagenes/yape.png" alt="">
-       </button>
+    
+  <input type="radio" id="yape" class="btn btn-yape" data-bs-toggle="modal" value="yape" data-bs-target="#modalyape" name="forma_pago" onclick="marcarCheckbox()">
+  <label for="yape"><img src="imagenes/yape.png" alt=""></label>
   
-       <button type="button" class="btn btn-plin" data-bs-toggle="modal" data-bs-target="#modalplin" onclick="marcarCheckbox()">   
-           <img src="imagenes/plini.png" alt=""> 
-       </button>
-       
-       <button type="button" class="btn btn-efetivo" data-bs-target="#" onclick="marcarCheckbox()">   
-           <img src="imagenes/efectivo.jpg" alt=""> 
-       </button>
+  <input type="radio" id="plin" class="btn btn-plin" data-bs-toggle="modal" value="plin" data-bs-target="#modalplin" name="forma_pago" onclick="marcarCheckbox()">
+  <label for="plin"><img src="imagenes/plini.png" alt=""></label> 
+           
+    <input type="radio" id="efectivo"  value="efectivo" class="btn btn-efetivo" data-bs-target="#" name="forma_pago" onclick="marcarCheckbox()">
+  <label for="efectivo"><img src="imagenes/efectivo1.jpg" alt=""></label>  
+  
        </div>
        
        <label for="usuario">SUBE LA CAPTURA SI REALIZASTE PAGO QR</label>
        <input class="form" type="file" accept="image/*" id="imagen" name="imagen">
        
-      </form>   
-
-        </div>
+      
+          
         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-primary" onclick="confirmaR()">Reservar</button>                                          <!-- BOTON PARA RESERVAR -->
+            <button type="button" class="btn btn-secondary"  name="cerrar" data-bs-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary" value="reservar" value="reservar" name="reservar" onclick="confirmaR()">Reservar</button>                                          <!-- BOTON PARA RESERVAR -->
         </div>
+        </form>   
+     </div>
       </div>
     </div>
   </div>

@@ -31,12 +31,12 @@ public class controlador extends HttpServlet {
             
            ad.setUsuario(usuario);
            ad.setPassword(password);
-         
+      
             r=dao.validar(ad);
             
-            if(r==1){
+            if(r==1){           
                 request.getSession().setAttribute("usuario",usuario);
-                
+                            
                 request.getRequestDispatcher("panel.jsp").forward(request, response);
             }else{
                 request.getRequestDispatcher("administrador.jsp").forward(request, response);

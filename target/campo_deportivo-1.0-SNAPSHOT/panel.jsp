@@ -1,4 +1,14 @@
-
+<%@page import="principal.enviaReser" %>
+<%@page import="javax.swing.table.DefaultTableModel" %>
+<%@page import="java.util.HashMap" %>
+<%@page import="principal.tipoTurno1" %>
+<%@page import="principal.tipoTurno2" %>
+<%@page import="principal.tipoTurno3" %>
+<%@page import="principal.tipoTurno4" %>
+<%@page import="principal.tipoTurno5" %>
+<%@page import="principal.tipoTurno6" %>
+<%@page import="principal.tipoHoras" %>
+<%@page import="principal.tipoHorarios" %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -34,7 +44,7 @@
                             </a>    
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 
-                                <li><a class="dropdown-item" href="#">${usuario}</a></li>
+                                <li><a class="dropdown-item" href="#">ADMINISTRADOR:<span id="usuario">${usuario}</span></a></li>
                                 <li><a class="dropdown-item" href="controlador?accion=Salir">Cerrar sesión</a></li>
 
 
@@ -53,12 +63,69 @@
      <h1> <strong>PEDIDOS REALIZADOS </strong> </h1>
            </div>
      
-        <h2>hola bienvenido ${usuario} </h2>
-            <h2>hola bienvenido  ${nombres} </h2>
+        <h2>hola bienvenido ${usuario} </h2>         
         
         
         
-    
+        <table class="table table-striped table-inverse table-responsive table-dark">
+            <thead class="thead-responsive">
+                <tr>
+                  
+                    <th>N° Campo Seleccionado</th> 
+                    <th>nombres</th>    
+                    <th>apellidos</th> 
+                    <th>dni</th> 
+                    <th>celular</th> 
+                    <th>turno</th> 
+                    <th>horas</th> 
+                    <th>total_pagar</th> 
+                    <th>fecha</th> 
+                    <th>horario</th> 
+                    <th>forma_pago</th> 
+                    <th>Captura de la imagen</th> 
+                 
+                </tr>   
+            </thead>
+            <tbody id="tbl_reservas">
+               
+                <%
+                enviaReser enviareser= new  enviaReser();
+                DefaultTableModel tabla = new DefaultTableModel();    
+                tabla = enviareser.leer();
+                for (int t=0;t<tabla.getRowCount();t++){
+                    out.println("<tr data-id=" + tabla.getValueAt(t,0) + "data-id_h=" + tabla.getValueAt(t,8) + "data-id_ho=" + tabla.getValueAt(t,12) + " >");
+                    out.println("<td>" + tabla.getValueAt(t,1) + "</td>");
+                    out.println("<td>" + tabla.getValueAt(t,2) + "</td>");
+                    out.println("<td>" + tabla.getValueAt(t,3) + "</td>");
+                    out.println("<td>" + tabla.getValueAt(t,4) + "</td>");
+                    out.println("<td>" + tabla.getValueAt(t,5) + "</td>");
+                    out.println("<td>" + tabla.getValueAt(t,6) + "</td>");
+                    out.println("<td>" + tabla.getValueAt(t,7) + "</td>");
+                    out.println("<td>" + tabla.getValueAt(t,9) + "</td>");
+                    out.println("<td>" + tabla.getValueAt(t,10) + "</td>");
+                    out.println("<td>" + tabla.getValueAt(t,11) + "</td>");
+                    out.println("<td>" + tabla.getValueAt(t,13) + "</td>");
+                    out.println("<td>" + tabla.getValueAt(t,14) + "</td>");
+
+                     out.println("</tr>");
+                    }
+                %>
+                
+            </tbody>
+  
+        </table>  
+        
+        
+        
+        
+        
+        
+        
+        
+       
+        
+        
+     <!--prueba
      <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6">
@@ -215,7 +282,7 @@
                 </div>
             </div>
         </div>
-    
+    -->
 
         <div class="inferior">
             <h2> <strong> <span>¡HARTO CHOCOLATE </span> Y BUEN FULBITO!</strong> </h2>
@@ -223,7 +290,14 @@
 
 
 
-
+<script>
+    // Obtén el elemento span que contiene el nombre de usuario
+    var usuarioElement = document.getElementById('usuario');
+    // Convierte el texto del nombre de usuario a mayúsculas
+    var nombreUsuario = usuarioElement.textContent.toUpperCase();
+    // Asigna el texto en mayúsculas al elemento span
+    usuarioElement.textContent = nombreUsuario;
+</script>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     </body>

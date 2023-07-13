@@ -297,10 +297,45 @@ grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 
                                                         /*botones de pago*/
  
+                                                        
+                                                        
+.pago-contenedor input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+}
+
+/* Estiliza la apariencia del botón de radio personalizado */
+.pago-contenedor input[type="radio"] + label {
+    display: flex;
+    cursor: pointer;
+    background-size: cover;
+    vertical-align: middle;
+}
+                                                        
+ .pago-contenedor label{
+     background: #000000;
+     text-align: center;
+     justify-content: center;
+     
+ }
+ .pago-contenedor label:hover{
+     background: #ffffff;
+     border-radius:10px;
+
+ }                                                       
+    
+ .pago-contenedor label img{
+     width: 50%;
+ }
+ .pago-contenedor{
+      display: flex;
+ }
+ 
 .F-pago{
       display: flex;
-      align-items: center;
-     
+      align-items: center;    
   }
   
  
@@ -308,20 +343,6 @@ grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   background-color: #262EE1;
 }
 
- .pago-contenedor img{
-     width: 50%;
- }
- .pago-contenedor{
-       display: flex;
-    align-items: center;
- }
- .pago-contenedor button{
-     background: #000000;
- }
- .pago-contenedor button:hover{
-     background: #ffffff;
-
- }
                                                         /*BOTON DE CHECK CUANDO SE PRESIONE EL MET PAGO*/
  .campos-contenedor input[type="checkbox"] {
   /* Estilos personalizados */

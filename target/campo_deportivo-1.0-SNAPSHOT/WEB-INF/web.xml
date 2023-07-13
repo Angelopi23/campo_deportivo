@@ -4,9 +4,25 @@
         <servlet-name>controlador</servlet-name>
         <servlet-class>controlador.controlador</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>controusu</servlet-name>
+        <servlet-class>controlador.controusu</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>sr_reserva</servlet-name>
+        <servlet-class>controlador.sr_reserva</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>controlador</servlet-name>
         <url-pattern>/controlador</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>controusu</servlet-name>
+        <url-pattern>/controusu</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>sr_reserva</servlet-name>
+        <url-pattern>/sr_reserva</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
