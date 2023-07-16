@@ -60,27 +60,27 @@ public class enviaReser extends reserCampo{
         try{
             cn=new Conexion_Datos();
             cn.abrir_conexion();
-            String query ="SELECT r.id, r.campo_seleccionado, r.nombres, r.apellidos, r.dni, r.celular,r.id_turno, h.hora, h.id_horas, r.total_pagar, r.fecha,ho.horario, ho.id_horario, r.forma_pago, r.captura_img FROM reservas as r INNER JOIN horas as h ON r.id_horas = h.id_horas INNER JOIN horarios as ho ON r.id_horario = ho.id_horario;";
+            String query ="SELECT r.id, r.campo_seleccionado, r.nombres, r.apellidos, r.dni, r.celular, t.turno,h.hora, r.total_pagar, r.fecha,ho.horario, r.forma_pago, r.captura_img FROM reservas AS r INNER JOIN turnos_campo1 AS t ON r.id_turno = t.id_turno INNER JOIN horas AS h ON r.id_horas = h.id_horas INNER JOIN horarios AS ho ON r.id_horario = ho.id_horario;";
             ResultSet consulta = cn.conexionBD.createStatement().executeQuery(query);
-            String encabezado[] ={"id","campo_seleccionado","nombres","apellidos","dni","celular","id_turno","hora","id_hora","total_pagar","horario","id_horario","fecha","forma_pago","captura_img"};
+            String encabezado[] ={"id","campo_seleccionado","nombres","apellidos","dni","celular","turno","hora","total_pagar","fecha","horario","forma_pago","captura_img"};
             tabla.setColumnIdentifiers(encabezado);
-            String datos[] = new String[15];
+            String datos[] = new String[13];
             while(consulta.next()){
                 datos[0]=consulta.getString("id");
                 datos[1]=consulta.getString("campo_seleccionado");
                 datos[2]=consulta.getString("nombres");
                 datos[3]=consulta.getString("apellidos");
                 datos[4]=consulta.getString("dni");
-                datos[5]=consulta.getString("calular");
-                datos[6]=consulta.getString("id_turno");
+                datos[5]=consulta.getString("celular");
+                datos[6]=consulta.getString("turno");
                 datos[7]=consulta.getString("hora");
-                datos[8]=consulta.getString("id_horas");
-                datos[9]=consulta.getString("total_pagar");
-                datos[10]=consulta.getString("fecha");
-                datos[11]=consulta.getString("horario");
-                datos[12]=consulta.getString("id_horario");
-                datos[13]=consulta.getString("forma_pago");
-                datos[14]=consulta.getString("captura_img");
+             /*   datos[8]=consulta.getString("id_horas");*/
+                datos[8]=consulta.getString("total_pagar");
+                datos[9]=consulta.getString("fecha");
+                datos[10]=consulta.getString("horario");
+             /*   datos[12]=consulta.getString("id_horario");*/
+                datos[11]=consulta.getString("forma_pago");
+                datos[12]=consulta.getString("captura_img");
                 tabla.addRow(datos);
                 
                 
@@ -116,7 +116,7 @@ public class enviaReser extends reserCampo{
       parametro.setInt(10, getId_horario());
       parametro.setString(11, getForma_pago());
       parametro.setString(12, getCaptura_img());
-      
+     
       retorno=parametro.executeUpdate();
       
       cn.cerrar_conexion();

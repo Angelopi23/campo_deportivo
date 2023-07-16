@@ -36,8 +36,8 @@ public class tipoTurno3 extends reserCampo{
     }
 
     
-    public HashMap drop_sangre(){
-    HashMap<String,String> drop= new HashMap();
+    public HashMap drop3_sangre(){
+    HashMap<String,String> drop3= new HashMap();
         
         try{
         cn=new Conexion_Datos();
@@ -46,14 +46,14 @@ public class tipoTurno3 extends reserCampo{
         cn.abrir_conexion();
         ResultSet consulta =cn.conexionBD.createStatement().executeQuery(query);
         while(consulta.next()){
-            drop.put(consulta.getString("id"), consulta.getString("turno"));
+            drop3.put(consulta.getString("id"), consulta.getString("turno"));
         }
         cn.cerrar_conexion();
         
         }catch(SQLException ex){
             System.out.println(ex.getMessage());  
         }
-        return drop;
+        return drop3;
     }
    
    /* @Override

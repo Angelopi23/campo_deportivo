@@ -72,44 +72,43 @@
                 <tr>
                   
                     <th>N° Campo Seleccionado</th> 
-                    <th>nombres</th>    
-                    <th>apellidos</th> 
-                    <th>dni</th> 
-                    <th>celular</th> 
-                    <th>turno</th> 
-                    <th>horas</th> 
-                    <th>total_pagar</th> 
-                    <th>fecha</th> 
-                    <th>horario</th> 
-                    <th>forma_pago</th> 
-                    <th>Captura de la imagen</th> 
+                    <th>Nombres</th>    
+                    <th>Apellidos</th> 
+                    <th>Dni</th> 
+                    <th>Celular</th> 
+                    <th>Turno</th> 
+                    <th>Horas</th> 
+                    <th>Total a Pagar</th> 
+                    <th>Fecha</th> 
+                    <th>Horario</th> 
+                    <th>Forma de Pago</th> 
+                    <th>Captura de la Imagen</th> 
                  
                 </tr>   
             </thead>
             <tbody id="tbl_reservas">
                
-                <%
-                enviaReser enviareser= new  enviaReser();
-                DefaultTableModel tabla = new DefaultTableModel();    
-                tabla = enviareser.leer();
-                for (int t=0;t<tabla.getRowCount();t++){
-                    out.println("<tr data-id=" + tabla.getValueAt(t,0) + "data-id_h=" + tabla.getValueAt(t,8) + "data-id_ho=" + tabla.getValueAt(t,12) + " >");
-                    out.println("<td>" + tabla.getValueAt(t,1) + "</td>");
-                    out.println("<td>" + tabla.getValueAt(t,2) + "</td>");
-                    out.println("<td>" + tabla.getValueAt(t,3) + "</td>");
-                    out.println("<td>" + tabla.getValueAt(t,4) + "</td>");
-                    out.println("<td>" + tabla.getValueAt(t,5) + "</td>");
-                    out.println("<td>" + tabla.getValueAt(t,6) + "</td>");
-                    out.println("<td>" + tabla.getValueAt(t,7) + "</td>");
-                    out.println("<td>" + tabla.getValueAt(t,9) + "</td>");
-                    out.println("<td>" + tabla.getValueAt(t,10) + "</td>");
-                    out.println("<td>" + tabla.getValueAt(t,11) + "</td>");
-                    out.println("<td>" + tabla.getValueAt(t,13) + "</td>");
-                    out.println("<td>" + tabla.getValueAt(t,14) + "</td>");
-
-                     out.println("</tr>");
-                    }
+                <% 
+            enviaReser enviareser = new principal.enviaReser();
+            DefaultTableModel tabla = enviareser.leer();
+            
+            for (int t = 0; t < tabla.getRowCount(); t++) { 
                 %>
+                <tr>
+                    <td><%= tabla.getValueAt(t, 1) %></td>
+                    <td><%= tabla.getValueAt(t, 2) %></td>
+                    <td><%= tabla.getValueAt(t, 3) %></td>
+                    <td><%= tabla.getValueAt(t, 4) %></td>
+                    <td><%= tabla.getValueAt(t, 5) %></td>
+                    <td><%= tabla.getValueAt(t, 6) %></td>
+                    <td><%= tabla.getValueAt(t, 7) %></td>
+                    <td><%= tabla.getValueAt(t, 8) %></td>
+                    <td><%= tabla.getValueAt(t, 9) %></td>
+                    <td><%= tabla.getValueAt(t, 10) %></td>
+                    <td><%= tabla.getValueAt(t, 11) %></td>
+                    <td><%= tabla.getValueAt(t, 12) %></td>
+                </tr>
+            <% } %>
                 
             </tbody>
   

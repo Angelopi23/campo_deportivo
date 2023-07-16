@@ -40,10 +40,11 @@ public class sr_reserva extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             
-            if("reservar".equals(request.getParameter("reservar") )){
-            
-                 enviareser=new enviaReser(0,request.getParameter("campo_seleccionado"),request.getParameter("nombres"),request.getParameter("apellidos"),request.getParameter("dni"),request.getParameter("celular"),Integer.valueOf(request.getParameter("id_turno")),Integer.valueOf(request.getParameter("id_horas")),request.getParameter("totalPagar"),request.getParameter("date"),Integer.valueOf(request.getParameter("id_horario")),request.getParameter("forma_pago"), request.getParameter("imagen"));
-           /* out.println("<p>"+ request.getParameter("campo_seleccionado") +"</p>");
+       
+          enviareser=new enviaReser(0,request.getParameter("campo_seleccionado"),request.getParameter("nombres"),request.getParameter("apellidos"),request.getParameter("dni"),request.getParameter("celular"),Integer.valueOf(request.getParameter("id_turno")),Integer.valueOf(request.getParameter("id_horas")),request.getParameter("totalPagar"),request.getParameter("date"),Integer.valueOf(request.getParameter("id_horario")),request.getParameter("forma_pago"), request.getParameter("imagen"));
+         
+               if("reservar".equals(request.getParameter("reservar") )){
+          /* out.println("<p>"+ request.getParameter("campo_seleccionado") +"</p>");
             out.println("<p>"+ request.getParameter("nombres") +"</p>");
             out.println("<p>"+ request.getParameter("apellidos") +"</p>");
             out.println("<p>"+ request.getParameter("dni") +"</p>");
@@ -57,8 +58,13 @@ public class sr_reserva extends HttpServlet {
            out.println("<p>"+ request.getParameter("imagen") +"</p>");*/
             
            if( enviareser.agregar() > 0){
-                out.println("<h1>ingreso exitoso</h1>");
-                 out.println("<a href='index.jsp'>Regresar</a>");
+              
+              try {
+            Thread.sleep(2000); // Retraso de 2 segundos (2000 milisegundos)
+            response.sendRedirect("index.jsp");
+        } catch (InterruptedException ex) {
+            System.out.println(ex.getMessage());
+        }
            }else{
                out.println("<h1>ERROR</h1>");
               out.println("<a href='index.jsp'>Regresar</a>");

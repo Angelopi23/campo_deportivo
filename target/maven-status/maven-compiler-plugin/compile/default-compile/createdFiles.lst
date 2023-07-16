@@ -1,3 +1,4 @@
+principal\tipoHoras2.class
 principal\tipoTurno2.class
 principal\enviaReser.class
 admin\adminDAO.class
@@ -11,6 +12,7 @@ principal\tipoTurno6.class
 principal\tipoTurno4.class
 controlador\sr_reserva.class
 admin\validar.class
+principal\tipoHorarios2.class
 principal\tipoTurno3.class
 admin\administrador.class
 config\Conexion_Datos.class

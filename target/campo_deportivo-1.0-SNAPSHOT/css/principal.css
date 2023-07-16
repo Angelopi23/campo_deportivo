@@ -343,6 +343,24 @@ grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   background-color: #262EE1;
 }
 
+ #forma-pago-checkbox2 {
+  background-color: #262EE1;
+}
+ #forma-pago-checkbox3 {
+  background-color: #262EE1;
+}
+ #forma-pago-checkbox4 {
+  background-color: #262EE1;
+}
+ #forma-pago-checkbox5 {
+  background-color: #262EE1;
+}
+ #forma-pago-checkbox6 {
+  background-color: #262EE1;
+}
+
+
+
                                                         /*BOTON DE CHECK CUANDO SE PRESIONE EL MET PAGO*/
  .campos-contenedor input[type="checkbox"] {
   /* Estilos personalizados */
