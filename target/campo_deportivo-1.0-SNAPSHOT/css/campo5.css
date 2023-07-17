@@ -1,0 +1,123 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16/07/2023, 05:22:04 PM
+    Author     : USUARIO
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+
+body{
+    width: 100%;
+    height: 97vh;
+    font-family: "Baloo 2", sans-serif;
+    background-color: #000000;
+  color: #ffffff;
+  
+    }
+
+
+
+                                                                  /*NAVBAR*/
+#navbar{
+    background-color: #000000;
+    padding: 20px;
+}
+
+.img-navbar{
+   width: 50px;
+}
+
+.navbar-brand{
+    font-size: 25px;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    transition: 0.5s ease;
+    margin: 0px 5px;
+}
+
+.navbar-brand span{
+    color:#20F25B;
+}
+
+.navbar-brand:hover{
+    color: white;
+}
+
+
+.nav-item .nav-link{
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    transition: 0.5s ease;
+    margin: 0px 5px;
+}
+
+.nav-item .nav-link:hover{
+    color: #7FFF00;
+}
+
+/*las 3 rallitas*/
+.navbar-toggler span{
+    color: white;
+}
+
+
+
+
+.campo{
+    padding-top: 125px;
+}
+
+.campo h2{
+    font-weight: bold;
+}
+
+.campo h2 strong{
+    color:#20F25B;
+}
+
+.campo h3{
+    text-align: justify;
+}
+
+
+                                                    /*SELECCION DE CAMPOS*/
+
+
+
+
+
+
+.inferior{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    padding: 10px;
+}
+
+.inferior h2 span{
+    color: #20F25B;
+    
+}
+
+.campo img{
+     height: 500px;
+     
+ }
