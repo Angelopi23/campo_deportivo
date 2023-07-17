@@ -37,7 +37,7 @@ public class tipoTurno4 extends reserCampo{
     }
 
     
-    public HashMap drop4_sangre(){
+    public HashMap drop_sangre4(){
     HashMap<String,String> drop4= new HashMap();
         
         try{

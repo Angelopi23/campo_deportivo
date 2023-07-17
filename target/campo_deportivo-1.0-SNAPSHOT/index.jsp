@@ -7,7 +7,7 @@
 <%@page import="java.util.HashMap" %>
 <%@page import="principal.tipoHoras" %>
 <%@page import="principal.tipoHorarios" %>
-
+<%@page import="javax.swing.table.DefaultTableModel" %>
 
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -148,7 +148,8 @@
         
         
         <label for="usuario">TURNO</label>
-      <select id="turno" name="id_turno" onchange="calcularTotal()">        
+      <select id="turno" name="id_turno" onchange="calcularTotal()">      
+          
     <%	
    tipoTurno1 tipoturno1=new tipoTurno1();
     HashMap<String,String> drop = tipoturno1.drop_sangre();
@@ -287,11 +288,11 @@
    
                                          <!--VENTANA MODAL-->
                                        
-    <div class="modal fade" id="modalreserva2" aria-hidden="true" aria-labelledby="modalreservaLabel2" tabindex="-1">
+    <div class="modal fade" id="modalreserva2" aria-hidden="true" aria-labelledby="modalreservaLabel" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
       <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="modalTitle2"> <strong><span>RESERVA </span> TU CAMPO </strong> </h5>
+            <h5 class="modal-title" id="modalTitle"> <strong><span>RESERVA </span> TU CAMPO </strong> </h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -311,11 +312,11 @@
       
        
        
-           <label for="usuario">TURNO</label>
-      <select id="turno2" name="id_turno" onchange="calcularTotal2()">        
-                  <%	
-   tipoTurno2 tipoturno2=new tipoTurno2();
-    HashMap<String,String> drop2 = tipoturno2.drop2_sangre();
+           <label for="usuario2">TURNO</label>
+      <select id="turno2" name="id_turno" onchange="calcularTotal2()" >        
+    <%	
+   tipoTurno2 tipoturno2=new  tipoTurno2();
+    HashMap<String,String> drop2 = tipoturno2.drop_sangre2();
   for(String i: drop2.keySet()){
   out.println(" <option value='"+ i +"'>"+ drop2.get(i)  +"</option>");
   }
@@ -329,8 +330,8 @@
              <%		
    tipoHoras tipohoras2=new tipoHoras();
     HashMap<String,String> h2 = tipohoras2.h_horas();
-  for(String i: h.keySet()){
-  out.println(" <option value='"+ i +"'>"+ h.get(i)  +"</option>");
+  for(String k: h.keySet()){
+  out.println(" <option value='"+ k +"'>"+ h.get(k)  +"</option>");
   }
  %>
        </select>
@@ -342,14 +343,14 @@
        <label for="usuario">FECHA</label>
        <input class="form" type="date" name="date" id="fecha2">
        
-       <label for="usuario">ELIGE TU HORARIO</label> <br>
-       <select id="horario2" name="id_horario" >
+  <label for="usuario">ELIGE TU HORARIO</label> <br>
+    <select id="horario2" name="id_horario" >
           
    <%		
    tipoHorarios tipohorarios2=new tipoHorarios();
     HashMap<String,String> horar2 = tipohorarios2.horar_horario();
-  for(String i: horar.keySet()){
-  out.println(" <option value='"+ i +"'>"+ horar.get(i)  +"</option>");
+  for(String k: horar.keySet()){
+  out.println(" <option value='"+ k +"'>"+ horar.get(k)  +"</option>");
   }
  %>
 </select>
@@ -476,7 +477,7 @@
       <select id="turno3" name="id_turno" onchange="calcularTotal3()">        
                   <%	
    tipoTurno3 tipoturno3=new tipoTurno3();
-    HashMap<String,String> drop3 = tipoturno3.drop3_sangre();
+    HashMap<String,String> drop3 = tipoturno3.drop_sangre3();
   for(String i: drop3.keySet()){
   out.println(" <option value='"+ i +"'>"+ drop3.get(i)  +"</option>");
   }
@@ -634,7 +635,7 @@
       <select id="turno4" name="id_turno" onchange="calcularTotal4()">        
                   <%	
    tipoTurno4 tipoturno4=new tipoTurno4();
-    HashMap<String,String> drop4 = tipoturno4.drop4_sangre();
+    HashMap<String,String> drop4 = tipoturno4.drop_sangre4();
   for(String i: drop4.keySet()){
   out.println(" <option value='"+ i +"'>"+ drop4.get(i)  +"</option>");
   }
@@ -794,7 +795,7 @@
       <select id="turno5" name="id_turno" onchange="calcularTotal5()">        
                   <%	
    tipoTurno5 tipoturno5=new tipoTurno5();
-    HashMap<String,String> drop5 = tipoturno5.drop5_sangre();
+    HashMap<String,String> drop5 = tipoturno5.drop_sangre();
   for(String i: drop5.keySet()){
   out.println(" <option value='"+ i +"'>"+ drop5.get(i)  +"</option>");
   }
@@ -955,7 +956,7 @@
       <select id="turno6" name="id_turno" onchange="calcularTotal6()">        
                   <%	
    tipoTurno6 tipoturno6=new tipoTurno6();
-    HashMap<String,String> drop6 = tipoturno6.drop6_sangre();
+    HashMap<String,String> drop6 = tipoturno6.drop_sangre();
   for(String i: drop6.keySet()){
   out.println(" <option value='"+ i +"'>"+ drop6.get(i)  +"</option>");
   }

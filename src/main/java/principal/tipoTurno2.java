@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.HashMap;
 public class tipoTurno2  extends reserCampo{
     
-     private String turno;
+    private String turno;
     private int id_turno;
     private Conexion_Datos cn;
 
@@ -38,17 +38,17 @@ public class tipoTurno2  extends reserCampo{
     }
 
  
-    public HashMap drop2_sangre(){
+    public HashMap  drop_sangre2(){
     HashMap<String,String> drop2= new HashMap();
         
         try{
         cn=new Conexion_Datos();
-        String query="SELECT id_turno as id, turno FROM turnos_campo2;";
+        String query2="SELECT id_turno as id, turno FROM turnos_campo2;";
         
         cn.abrir_conexion();
-        ResultSet consulta =cn.conexionBD.createStatement().executeQuery(query);
-        while(consulta.next()){
-            drop2.put(consulta.getString("id"), consulta.getString("turno"));
+        ResultSet consulta2 =cn.conexionBD.createStatement().executeQuery(query2);
+        while(consulta2.next()){
+            drop2.put(consulta2.getString("id"), consulta2.getString("turno"));
         }
         cn.cerrar_conexion();
         

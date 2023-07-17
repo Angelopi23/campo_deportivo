@@ -60,7 +60,43 @@ public class enviaReser extends reserCampo{
         try{
             cn=new Conexion_Datos();
             cn.abrir_conexion();
-            String query ="SELECT r.id, r.campo_seleccionado, r.nombres, r.apellidos, r.dni, r.celular, t.turno,h.hora, r.total_pagar, r.fecha,ho.horario, r.forma_pago, r.captura_img FROM reservas AS r INNER JOIN turnos_campo1 AS t ON r.id_turno = t.id_turno INNER JOIN horas AS h ON r.id_horas = h.id_horas INNER JOIN horarios AS ho ON r.id_horario = ho.id_horario;";
+     String query ="SELECT r.id, r.campo_seleccionado, r.nombres, r.apellidos, r.dni, r.celular, t.turno, h.hora, r.total_pagar, r.fecha, ho.horario, r.forma_pago, r.captura_img\n" +
+"FROM reservas AS r\n" +
+"INNER JOIN horas AS h ON r.id_horas = h.id_horas\n" +
+"INNER JOIN horarios AS ho ON r.id_horario = ho.id_horario\n" +
+"INNER JOIN turnos_campo1 AS t ON r.id_turno = t.id_turno\n" +
+"UNION ALL\n" +
+"SELECT r.id, r.campo_seleccionado, r.nombres, r.apellidos, r.dni, r.celular, t2.turno, h.hora, r.total_pagar, r.fecha, ho.horario, r.forma_pago, r.captura_img\n" +
+"FROM reservas AS r\n" +
+"INNER JOIN horas AS h ON r.id_horas = h.id_horas\n" +
+"INNER JOIN horarios AS ho ON r.id_horario = ho.id_horario\n" +
+"INNER JOIN turnos_campo2 AS t2 ON r.id_turno = t2.id_turno\n" +
+"UNION ALL\n" +
+"SELECT r.id, r.campo_seleccionado, r.nombres, r.apellidos, r.dni, r.celular, t3.turno, h.hora, r.total_pagar, r.fecha, ho.horario, r.forma_pago, r.captura_img\n" +
+"FROM reservas AS r\n" +
+"INNER JOIN horas AS h ON r.id_horas = h.id_horas\n" +
+"INNER JOIN horarios AS ho ON r.id_horario = ho.id_horario\n" +
+"INNER JOIN turnos_campo3 AS t3 ON r.id_turno = t3.id_turno\n" +
+"UNION ALL\n" +
+"SELECT r.id, r.campo_seleccionado, r.nombres, r.apellidos, r.dni, r.celular, t4.turno, h.hora, r.total_pagar, r.fecha, ho.horario, r.forma_pago, r.captura_img\n" +
+"FROM reservas AS r\n" +
+"INNER JOIN horas AS h ON r.id_horas = h.id_horas\n" +
+"INNER JOIN horarios AS ho ON r.id_horario = ho.id_horario\n" +
+"INNER JOIN turnos_campo4 AS t4 ON r.id_turno = t4.id_turno\n" +
+"UNION ALL\n" +
+"SELECT r.id, r.campo_seleccionado, r.nombres, r.apellidos, r.dni, r.celular, t5.turno, h.hora, r.total_pagar, r.fecha, ho.horario, r.forma_pago, r.captura_img\n" +
+"FROM reservas AS r\n" +
+"INNER JOIN horas AS h ON r.id_horas = h.id_horas\n" +
+"INNER JOIN horarios AS ho ON r.id_horario = ho.id_horario\n" +
+"INNER JOIN turnos_campo5 AS t5 ON r.id_turno = t5.id_turno\n" +
+"UNION ALL\n" +
+"SELECT r.id, r.campo_seleccionado, r.nombres, r.apellidos, r.dni, r.celular, t6.turno, h.hora, r.total_pagar, r.fecha, ho.horario, r.forma_pago, r.captura_img\n" +
+"FROM reservas AS r\n" +
+"INNER JOIN horas AS h ON r.id_horas = h.id_horas\n" +
+"INNER JOIN horarios AS ho ON r.id_horario = ho.id_horario\n" +
+"INNER JOIN turnos_campo6 AS t6 ON r.id_turno = t6.id_turno;";
+
+
             ResultSet consulta = cn.conexionBD.createStatement().executeQuery(query);
             String encabezado[] ={"id","campo_seleccionado","nombres","apellidos","dni","celular","turno","hora","total_pagar","fecha","horario","forma_pago","captura_img"};
             tabla.setColumnIdentifiers(encabezado);
@@ -74,7 +110,6 @@ public class enviaReser extends reserCampo{
                 datos[5]=consulta.getString("celular");
                 datos[6]=consulta.getString("turno");
                 datos[7]=consulta.getString("hora");
-             /*   datos[8]=consulta.getString("id_horas");*/
                 datos[8]=consulta.getString("total_pagar");
                 datos[9]=consulta.getString("fecha");
                 datos[10]=consulta.getString("horario");

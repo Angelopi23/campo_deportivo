@@ -10,6 +10,8 @@
 <%@page import="principal.tipoHoras" %>
 <%@page import="principal.tipoHorarios" %>
 
+
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -70,7 +72,7 @@
         <table class="table table-striped table-inverse table-responsive table-dark">
             <thead class="thead-responsive">
                 <tr>
-                  
+                  <th>#</th> 
                     <th>N° Campo Seleccionado</th> 
                     <th>Nombres</th>    
                     <th>Apellidos</th> 
@@ -95,6 +97,7 @@
             for (int t = 0; t < tabla.getRowCount(); t++) { 
                 %>
                 <tr>
+                    <td><%= tabla.getValueAt(t, 0) %></td>
                     <td><%= tabla.getValueAt(t, 1) %></td>
                     <td><%= tabla.getValueAt(t, 2) %></td>
                     <td><%= tabla.getValueAt(t, 3) %></td>

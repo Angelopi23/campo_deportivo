@@ -39,7 +39,7 @@ public class tipoTurno6  extends reserCampo {
     }
 
     
-    public HashMap drop6_sangre(){
+    public HashMap drop_sangre(){
     HashMap<String,String> drop6= new HashMap();
         
         try{
