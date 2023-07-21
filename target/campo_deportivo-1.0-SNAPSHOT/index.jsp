@@ -66,7 +66,7 @@
          <img class="img-pelota" src="imagenes/pelota-navbar.png" alt="alt"/>
   </section>
 
-        
+                                                             <!--ACERCA  DE NOSOTROS-->
     <section class="acerca" id="ACERCA">
         
               <div class="acerca-contenedor">
@@ -130,18 +130,18 @@
         </div>
         <div class="modal-body">
               
-      <form action="sr_reserva" method="post">
-          
+      <form action="sr_reserva" method="post" enctype="multipart/form-data" >          
+     
       <label class="seleccion" for="usuario">CAMPO SELECCIONADO 1</label>
       <input type="text" class="Ncampo" name="campo_seleccionado" value="campo 1" id="campo_seleccionado" hidden> <!--SE MANTIENE OCULTO PARA EL USUARIO, NOS MANDARA A LA BD QUE ES EL N° DE CAMPO -->
       <label  for="usuario">NOMBRES</label>
-      <input  class="form"  type="text" name="nombres"  placeholder="Ingrese su nombre" required="" >  <!--required para que no envie formulario vacio--> <!--pattern para pedir que llene algo especifico-->
+      <input  class="form"  type="text" name="nombres" id="nombres" placeholder="Ingrese su nombre" required="" >  <!--required para que no envie formulario vacio--> <!--pattern para pedir que llene algo especifico-->
       <label for="usuario">APELLIDOS</label>
-      <input class="form" type="text" name="apellidos"  placeholder="Ingrese sus apellidos" required="">
+      <input class="form" type="text" name="apellidos" id="apellidos"  placeholder="Ingrese sus apellidos" required="">
       <label for="usuario">DNI</label>
-      <input class="form" type="number" name="dni" placeholder="Ingrese su DNI" required="" oninput="limitarDNI(this)">
+      <input class="form" type="number" name="dni" id="dni" placeholder="Ingrese su DNI" required="" oninput="limitarDNI(this)">
        <label for="usuario">NUMERO CELULAR</label>
-      <input class="form" type="number" name="celular" placeholder="Ingrese su numero de celular" required="" oninput="limitarCEL(this)">
+      <input class="form" type="number" name="celular" id="celular" placeholder="Ingrese su numero de celular" required="" oninput="limitarCEL(this)">
       
        
         
@@ -212,14 +212,17 @@
   
        </div>
        
-       <label for="usuario">SUBE LA CAPTURA SI REALIZASTE PAGO QR</label>
-       <input class="form" type="file" accept="image/*" id="imagen" name="imagen">
        
+  
+        <label for="usuario">SUBE LA CAPTURA SI REALIZASTE PAGO QR</label>
+        <input class="form" type="file" accept="image/*" id="imagen" name="imagen">
+    
       
           
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary"  name="cerrar" data-bs-dismiss="modal">Cerrar</button>
-            <button type="submit" class="btn btn-primary" value="reservar" value="reservar" name="reservar" onclick="confirmaR()">Reservar</button>                                          <!-- BOTON PARA RESERVAR -->
+            <button type="submit" class="btn btn-primary" value="reservar" value="reservar" name="reservar" onclick="confirmaR()">Reservar</button>  
+          
         </div>
         </form>   
      </div>
@@ -596,7 +599,7 @@
                                                          <!----------------------CAMPO 4------------------------->
   <div class="card" style="width: 18rem;">
   <h5 class="title"> <strong> CAMPO 4 </strong> </h5>
-  <img src="imagenes/campos.png" class="card-img-top" >
+  <a href="campo4.jsp"><img src="imagenes/campos.png" class="card-img-top" ></a>
   <div class="card-body">
     <h5 class="card-title"> <strong> N° <span> JUGADORES </span>7 </strong></h5>
    <p class="card-text"> <strong>DIA  <img src="imagenes/dia7.png" class="img-horario" alt="">   </strong> </p>
@@ -756,7 +759,7 @@
            
    <div class="card" style="width: 18rem;">
     <h5 class="title"> <strong> CAMPO 5 </strong> </h5>
-  <img src="imagenes/campos.png" class="card-img-top" >
+  <a href="campo5.jsp"><img src="imagenes/campos.png" class="card-img-top" ></a>
   <div class="card-body">
     <h5 class="card-title"> <strong> N° <span> JUGADORES </span>6 </strong></h5>
     <p class="card-text"> <strong>DIA  <img src="imagenes/dia6.png" class="img-horario" alt="">   </strong> </p>
@@ -917,7 +920,7 @@
         
     <div class="card" style="width: 18rem;">
       <h5 class="title"> <strong> CAMPO 6 </strong> </h5>
-  <img src="imagenes/campos.png" class="card-img-top" >
+ <a href="campo6.jsp"><img src="imagenes/campos.png" class="card-img-top" ></a>
   <div class="card-body">
     <h5 class="card-title"> <strong> N° <span> JUGADORES </span>5</strong></h5>
    <p class="card-text"> <strong>DIA  <img src="imagenes/dia5.png" class="img-horario" alt="">   </strong> </p>
@@ -1232,9 +1235,6 @@ function marcarCheckbox6() {
   checkbox6.checked = true;
 }
 
-
-
-
   function confirmaR() {
 
  Swal.fire({
@@ -1250,8 +1250,8 @@ function marcarCheckbox6() {
 }
 
 
-  
 </script>  
+ 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.all.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     </body>

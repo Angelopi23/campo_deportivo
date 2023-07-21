@@ -65,31 +65,31 @@ public class enviaReser extends reserCampo{
 "INNER JOIN horas AS h ON r.id_horas = h.id_horas\n" +
 "INNER JOIN horarios AS ho ON r.id_horario = ho.id_horario\n" +
 "INNER JOIN turnos_campo1 AS t ON r.id_turno = t.id_turno\n" +
-"UNION ALL\n" +
+"UNION ALL \n" +
 "SELECT r.id, r.campo_seleccionado, r.nombres, r.apellidos, r.dni, r.celular, t2.turno, h.hora, r.total_pagar, r.fecha, ho.horario, r.forma_pago, r.captura_img\n" +
 "FROM reservas AS r\n" +
 "INNER JOIN horas AS h ON r.id_horas = h.id_horas\n" +
 "INNER JOIN horarios AS ho ON r.id_horario = ho.id_horario\n" +
 "INNER JOIN turnos_campo2 AS t2 ON r.id_turno = t2.id_turno\n" +
-"UNION ALL\n" +
+"UNION ALL \n" +
 "SELECT r.id, r.campo_seleccionado, r.nombres, r.apellidos, r.dni, r.celular, t3.turno, h.hora, r.total_pagar, r.fecha, ho.horario, r.forma_pago, r.captura_img\n" +
 "FROM reservas AS r\n" +
 "INNER JOIN horas AS h ON r.id_horas = h.id_horas\n" +
 "INNER JOIN horarios AS ho ON r.id_horario = ho.id_horario\n" +
 "INNER JOIN turnos_campo3 AS t3 ON r.id_turno = t3.id_turno\n" +
-"UNION ALL\n" +
+"UNION ALL \n" +
 "SELECT r.id, r.campo_seleccionado, r.nombres, r.apellidos, r.dni, r.celular, t4.turno, h.hora, r.total_pagar, r.fecha, ho.horario, r.forma_pago, r.captura_img\n" +
 "FROM reservas AS r\n" +
 "INNER JOIN horas AS h ON r.id_horas = h.id_horas\n" +
 "INNER JOIN horarios AS ho ON r.id_horario = ho.id_horario\n" +
 "INNER JOIN turnos_campo4 AS t4 ON r.id_turno = t4.id_turno\n" +
-"UNION ALL\n" +
+"UNION ALL \n" +
 "SELECT r.id, r.campo_seleccionado, r.nombres, r.apellidos, r.dni, r.celular, t5.turno, h.hora, r.total_pagar, r.fecha, ho.horario, r.forma_pago, r.captura_img\n" +
 "FROM reservas AS r\n" +
 "INNER JOIN horas AS h ON r.id_horas = h.id_horas\n" +
 "INNER JOIN horarios AS ho ON r.id_horario = ho.id_horario\n" +
 "INNER JOIN turnos_campo5 AS t5 ON r.id_turno = t5.id_turno\n" +
-"UNION ALL\n" +
+"UNION ALL \n" +
 "SELECT r.id, r.campo_seleccionado, r.nombres, r.apellidos, r.dni, r.celular, t6.turno, h.hora, r.total_pagar, r.fecha, ho.horario, r.forma_pago, r.captura_img\n" +
 "FROM reservas AS r\n" +
 "INNER JOIN horas AS h ON r.id_horas = h.id_horas\n" +
@@ -113,7 +113,6 @@ public class enviaReser extends reserCampo{
                 datos[8]=consulta.getString("total_pagar");
                 datos[9]=consulta.getString("fecha");
                 datos[10]=consulta.getString("horario");
-             /*   datos[12]=consulta.getString("id_horario");*/
                 datos[11]=consulta.getString("forma_pago");
                 datos[12]=consulta.getString("captura_img");
                 tabla.addRow(datos);
@@ -164,5 +163,30 @@ public class enviaReser extends reserCampo{
         return retorno;
     }
 
+  
+   
+   
+     @Override
+   public int eliminar(){
+        int retorno =0;
+     try{
+      
+      PreparedStatement parametro;    
+      cn=new Conexion_Datos();
+      String query="DELETE FROM reservas WHERE id= ?;";
+      cn.abrir_conexion();
+      parametro=(PreparedStatement)cn.conexionBD.prepareStatement(query);
+      parametro.setInt(1, getId());
+      retorno=parametro.executeUpdate();
+      
+      cn.cerrar_conexion();
+      
+      }catch(SQLException ex){
+          System.out.println(ex.getMessage());
+          retorno=0;
+      } 
+            
+        return retorno;
+    } 
     
 }

@@ -12,11 +12,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import principal.enviaReser;
 
-/**
- *
- * @author LENOVO
- */
+
+import java.io.File;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Part;
+
+
+@WebServlet("/controlador/sr_reserva")
+@MultipartConfig
+
 public class sr_reserva extends HttpServlet {
+    
+     private static final long serialVersionUID = 1L;
+    private static final String RUTA_CARPETA_IMAGENES = "C:\\xampp\\htdocs\\campo_deportivo\\src\\main\\webapp\\img-subidas/"; // Cambia esta ruta por la ruta de tu carpeta en el servidor
+
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -42,23 +55,11 @@ public class sr_reserva extends HttpServlet {
             
        
           enviareser=new enviaReser(0,request.getParameter("campo_seleccionado"),request.getParameter("nombres"),request.getParameter("apellidos"),request.getParameter("dni"),request.getParameter("celular"),Integer.valueOf(request.getParameter("id_turno")),Integer.valueOf(request.getParameter("id_horas")),request.getParameter("totalPagar"),request.getParameter("date"),Integer.valueOf(request.getParameter("id_horario")),request.getParameter("forma_pago"), request.getParameter("imagen"));
-         
-               if("reservar".equals(request.getParameter("reservar") )){
-          /* out.println("<p>"+ request.getParameter("campo_seleccionado") +"</p>");
-            out.println("<p>"+ request.getParameter("nombres") +"</p>");
-            out.println("<p>"+ request.getParameter("apellidos") +"</p>");
-            out.println("<p>"+ request.getParameter("dni") +"</p>");
-            out.println("<p>"+ request.getParameter("celular") +"</p>");
-            out.println("<p>"+ request.getParameter("id_turno") +"</p>");
-            out.println("<p>"+ request.getParameter("id_horas") +"</p>");
-            out.println("<p>"+ request.getParameter("totalPagar") +"</p>");
-            out.println("<p>"+ request.getParameter("date") +"</p>");
-            out.println("<p>"+ request.getParameter("id_horario") +"</p>");
-            out.println("<p>"+ request.getParameter("forma_pago") +"</p>");
-           out.println("<p>"+ request.getParameter("imagen") +"</p>");*/
-            
+        
+          
+//boton agregar
+         if("reservar".equals(request.getParameter("reservar") )){        
            if( enviareser.agregar() > 0){
-              
               try {
             Thread.sleep(2000); // Retraso de 2 segundos (2000 milisegundos)
             response.sendRedirect("index.jsp");
@@ -70,11 +71,26 @@ public class sr_reserva extends HttpServlet {
               out.println("<a href='index.jsp'>Regresar</a>");
            }
             }
-            
-            
-       
-           
-          
+    
+    //boton eliminar
+        if("eliminar".equals(request.getParameter("eliminar") )){ 
+           if( enviareser.eliminar() > 0){
+              try {
+            Thread.sleep(2000); // Retraso de 2 segundos (2000 milisegundos)
+            response.sendRedirect("panel.jsp");
+        } catch (InterruptedException ex) {
+            System.out.println(ex.getMessage());
+        }
+           }else{
+               out.println("<h1>No se elimino</h1>");
+              out.println("<a href='panel.jsp'>Regresar</a>");
+           }
+            }          
+               
+     
+
+   
+               
             out.println("</body>");
             out.println("</html>");
         }
@@ -103,10 +119,38 @@ public class sr_reserva extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    
+    
+    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+       
+         //   processRequest(request, response);
+      
+         try {
+            // Obtener la parte (input) del archivo de imagen del formulario
+            Part archivoPart = request.getPart("imagen");
+
+            // Obtener el nombre original del archivo
+            String nombreArchivo = Paths.get(archivoPart.getSubmittedFileName()).getFileName().toString();
+
+            // Leer el contenido del archivo
+            InputStream archivoInputStream = archivoPart.getInputStream();
+
+            // Guardar la imagen en la carpeta del servidor
+            Files.copy(archivoInputStream, new File(RUTA_CARPETA_IMAGENES + nombreArchivo).toPath());
+            
+
+         response.sendRedirect("index.jsp?exito=true");
+        } catch (IOException | ServletException e) {
+              // Manejar errores, mostrar mensaje de error, etc.
+    response.sendRedirect("index.jsp?exito=false");
+            
+
+        }
+       
+        
     }
 
     /**

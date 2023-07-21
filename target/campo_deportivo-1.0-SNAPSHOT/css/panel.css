@@ -57,7 +57,10 @@ body{
 }
                                                     /*SELECCION FORMULARIO*/
 
-
+     .boton-eliminar{
+  padding: 15px;  
+       }
+                                                    
    .titulo h1{
        display: flex;
     text-align: center;
@@ -70,7 +73,7 @@ body{
      
    }
 
-
+   
  label {
       font-weight: bold;
       color: #20F25B;
