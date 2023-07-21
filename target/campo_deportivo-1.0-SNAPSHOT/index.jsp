@@ -130,7 +130,7 @@
         </div>
         <div class="modal-body">
               
-      <form action="sr_reserva" method="post" enctype="multipart/form-data" >          
+      <form action="sr_reserva" method="post"  >          
      
       <label class="seleccion" for="usuario">CAMPO SELECCIONADO 1</label>
       <input type="text" class="Ncampo" name="campo_seleccionado" value="campo 1" id="campo_seleccionado" hidden> <!--SE MANTIENE OCULTO PARA EL USUARIO, NOS MANDARA A LA BD QUE ES EL N° DE CAMPO -->
@@ -300,7 +300,7 @@
         </div>
         <div class="modal-body">
               
-      <form action="sr_reserva" method="post">
+      <form action="sr_reserva" method="post" >
           
       <label class="seleccion" for="usuario">CAMPO SELECCIONADO 2</label>
       <input type="text" class="Ncampo" name="campo_seleccionado" value="campo 2" id="campo_seleccionado" hidden> <!--SE MANTIENE OCULTO PARA EL USUARIO, NOS MANDARA A LA BD QUE ES EL N° DE CAMPO -->

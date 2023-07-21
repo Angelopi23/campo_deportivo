@@ -116,7 +116,7 @@ public class enviaReser extends reserCampo{
                 datos[11]=consulta.getString("forma_pago");
                 datos[12]=consulta.getString("captura_img");
                 tabla.addRow(datos);
-                
+                //datos[13]=consulta.getBytes(captura_img);
                 
             }
             

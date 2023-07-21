@@ -13,24 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 import principal.enviaReser;
 
 
-import java.io.File;
-import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import javax.servlet.annotation.MultipartConfig;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Part;
-
-
-@WebServlet("/controlador/sr_reserva")
-@MultipartConfig
-
 public class sr_reserva extends HttpServlet {
     
-     private static final long serialVersionUID = 1L;
-    private static final String RUTA_CARPETA_IMAGENES = "C:\\xampp\\htdocs\\campo_deportivo\\src\\main\\webapp\\img-subidas/"; // Cambia esta ruta por la ruta de tu carpeta en el servidor
-
-
+  
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -126,29 +111,9 @@ public class sr_reserva extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
        
-         //   processRequest(request, response);
+         processRequest(request, response);
       
-         try {
-            // Obtener la parte (input) del archivo de imagen del formulario
-            Part archivoPart = request.getPart("imagen");
-
-            // Obtener el nombre original del archivo
-            String nombreArchivo = Paths.get(archivoPart.getSubmittedFileName()).getFileName().toString();
-
-            // Leer el contenido del archivo
-            InputStream archivoInputStream = archivoPart.getInputStream();
-
-            // Guardar la imagen en la carpeta del servidor
-            Files.copy(archivoInputStream, new File(RUTA_CARPETA_IMAGENES + nombreArchivo).toPath());
-            
-
-         response.sendRedirect("index.jsp?exito=true");
-        } catch (IOException | ServletException e) {
-              // Manejar errores, mostrar mensaje de error, etc.
-    response.sendRedirect("index.jsp?exito=false");
-            
-
-        }
+    
        
         
     }
