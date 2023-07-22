@@ -15,8 +15,7 @@ import principal.enviaReser;
 
 public class sr_reserva extends HttpServlet {
     
-  
-    /**
+   /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
      *
@@ -110,11 +109,9 @@ public class sr_reserva extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
-         processRequest(request, response);
+           processRequest(request, response);
       
     
-       
         
     }
 

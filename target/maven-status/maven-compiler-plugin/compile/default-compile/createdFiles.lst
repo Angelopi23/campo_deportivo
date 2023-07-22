@@ -2,6 +2,7 @@ principal\tipoTurno2.class
 principal\enviaReser.class
 admin\adminDAO.class
 config\Conexion.class
+PdfWriter.class
 principal\reserCampo.class
 principal\tipoTurno1.class
 controlador\controlador.class

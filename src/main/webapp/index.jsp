@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" type="text/css" href="css/principal.css">
     <link rel="shortcut icon" href="imagenes/favicon.jpg" type="image/x-icon">
+        <script type="text/javascript" src="jspdf.min.js"></script>
     </head>
     <body>
        
@@ -130,7 +131,7 @@
         </div>
         <div class="modal-body">
               
-      <form action="sr_reserva" method="post"  >          
+      <form action="sr_reserva" method="post"  onsubmit="genPDF()">          
      
       <label class="seleccion" for="usuario">CAMPO SELECCIONADO 1</label>
       <input type="text" class="Ncampo" name="campo_seleccionado" value="campo 1" id="campo_seleccionado" hidden> <!--SE MANTIENE OCULTO PARA EL USUARIO, NOS MANDARA A LA BD QUE ES EL N° DE CAMPO -->
@@ -199,7 +200,7 @@
          
          </div>
        
-       <div class="pago-contenedor" >
+       <div class="pago-contenedor">
     
   <input type="radio" id="yape" class="btn btn-yape" data-bs-toggle="modal" value="yape" data-bs-target="#modalyape" name="forma_pago" onclick="marcarCheckbox()">
   <label for="yape"><img src="imagenes/yape.png" alt=""></label>
@@ -300,18 +301,18 @@
         </div>
         <div class="modal-body">
               
-      <form action="sr_reserva" method="post" >
+      <form action="sr_reserva" method="post" onsubmit="genPDF2()">
           
       <label class="seleccion" for="usuario">CAMPO SELECCIONADO 2</label>
-      <input type="text" class="Ncampo" name="campo_seleccionado" value="campo 2" id="campo_seleccionado" hidden> <!--SE MANTIENE OCULTO PARA EL USUARIO, NOS MANDARA A LA BD QUE ES EL N° DE CAMPO -->
+      <input type="text" class="Ncampo" name="campo_seleccionado" value="campo 2" id="campo_seleccionado2" hidden> <!--SE MANTIENE OCULTO PARA EL USUARIO, NOS MANDARA A LA BD QUE ES EL N° DE CAMPO -->
       <label  for="usuario">NOMBRES</label>
-      <input  class="form"  type="text" name="nombres"  placeholder="Ingrese su nombre" required="" >  <!--required para que no envie formulario vacio--> <!--pattern para pedir que llene algo especifico-->
+      <input  class="form"  type="text" name="nombres" id="nombres2" placeholder="Ingrese su nombre" required="" >  <!--required para que no envie formulario vacio--> <!--pattern para pedir que llene algo especifico-->
       <label for="usuario">APELLIDOS</label>
-      <input class="form" type="text" name="apellidos"  placeholder="Ingrese sus apellidos" required="">
+      <input class="form" type="text" name="apellidos" id="apellidos2" placeholder="Ingrese sus apellidos" required="">
       <label for="usuario">DNI</label>
-      <input class="form" type="number" name="dni" placeholder="Ingrese su DNI" required="" oninput="limitarDNI(this)">
+      <input class="form" type="number" name="dni" id="dni2" placeholder="Ingrese su DNI" required="" oninput="limitarDNI(this)">
        <label for="usuario">NUMERO CELULAR</label>
-      <input class="form" type="number" name="celular" placeholder="Ingrese su numero de celular" required="" oninput="limitarCEL(this)">
+      <input class="form" type="number" name="celular" id="celular2" placeholder="Ingrese su numero de celular" required="" oninput="limitarCEL(this)">
       
        
        
@@ -461,18 +462,18 @@
         </div>
         <div class="modal-body">
               
-      <form action="sr_reserva" method="post">
+      <form action="sr_reserva" method="post" onsubmit="genPDF3()">
           
       <label class="seleccion" for="usuario">CAMPO SELECCIONADO 3</label>
-      <input type="text" class="Ncampo" name="campo_seleccionado" value="campo 3" id="campo_seleccionado" hidden> <!--SE MANTIENE OCULTO PARA EL USUARIO, NOS MANDARA A LA BD QUE ES EL N° DE CAMPO -->
+      <input type="text" class="Ncampo" name="campo_seleccionado" value="campo 3" id="campo_seleccionado3" hidden> <!--SE MANTIENE OCULTO PARA EL USUARIO, NOS MANDARA A LA BD QUE ES EL N° DE CAMPO -->
       <label  for="usuario">NOMBRES</label>
-      <input  class="form"  type="text" name="nombres"  placeholder="Ingrese su nombre" required="" >  <!--required para que no envie formulario vacio--> <!--pattern para pedir que llene algo especifico-->
+      <input  class="form"  type="text" name="nombres" id="nombres3"  placeholder="Ingrese su nombre" required="" >  <!--required para que no envie formulario vacio--> <!--pattern para pedir que llene algo especifico-->
       <label for="usuario">APELLIDOS</label>
-      <input class="form" type="text" name="apellidos"  placeholder="Ingrese sus apellidos" required="">
+      <input class="form" type="text" name="apellidos" id="apellidos3" placeholder="Ingrese sus apellidos" required="">
       <label for="usuario">DNI</label>
-      <input class="form" type="number" name="dni" placeholder="Ingrese su DNI" required="" oninput="limitarDNI(this)">
+      <input class="form" type="number" name="dni" id="dni3" placeholder="Ingrese su DNI" required="" oninput="limitarDNI(this)">
        <label for="usuario">NUMERO CELULAR</label>
-      <input class="form" type="number" name="celular" placeholder="Ingrese su numero de celular" required="" oninput="limitarCEL(this)">
+      <input class="form" type="number" name="celular" id="celular3" placeholder="Ingrese su numero de celular" required="" oninput="limitarCEL(this)">
       
        
         
@@ -619,18 +620,18 @@
         </div>
         <div class="modal-body">
               
-      <form action="sr_reserva" method="post">
+      <form action="sr_reserva" method="post" onsubmit="genPDF4()">
           
       <label class="seleccion" for="usuario">CAMPO SELECCIONADO 4</label>
-      <input type="text" class="Ncampo" name="campo_seleccionado" value="campo 4" id="campo_seleccionado" hidden> <!--SE MANTIENE OCULTO PARA EL USUARIO, NOS MANDARA A LA BD QUE ES EL N° DE CAMPO -->
+      <input type="text" class="Ncampo" name="campo_seleccionado" value="campo 4" id="campo_seleccionado4" hidden> <!--SE MANTIENE OCULTO PARA EL USUARIO, NOS MANDARA A LA BD QUE ES EL N° DE CAMPO -->
       <label  for="usuario">NOMBRES</label>
-      <input  class="form"  type="text" name="nombres"  placeholder="Ingrese su nombre" required="">  <!--required para que no envie formulario vacio--> <!--pattern para pedir que llene algo especifico-->
+      <input  class="form"  type="text" name="nombres" id="nombres4" placeholder="Ingrese su nombre" required="">  <!--required para que no envie formulario vacio--> <!--pattern para pedir que llene algo especifico-->
       <label for="usuario">APELLIDOS</label>
-      <input class="form" type="text" name="apellidos"  placeholder="Ingrese sus apellidos" required="">
+      <input class="form" type="text" name="apellidos" id="apellidos4" placeholder="Ingrese sus apellidos" required="">
       <label for="usuario">DNI</label>
-      <input class="form" type="number" name="dni" placeholder="Ingrese su DNI" required="" oninput="limitarDNI(this)">
+      <input class="form" type="number" name="dni" id="dni4" placeholder="Ingrese su DNI" required="" oninput="limitarDNI(this)">
        <label for="usuario">NUMERO CELULAR</label>
-      <input class="form" type="number" name="celular" placeholder="Ingrese su numero de celular" required="" oninput="limitarCEL(this)">
+      <input class="form" type="number" name="celular" id="celular4" placeholder="Ingrese su numero de celular" required="" oninput="limitarCEL(this)">
       
        
         
@@ -779,18 +780,18 @@
         </div>
         <div class="modal-body">
               
-      <form action="sr_reserva" method="post">
+      <form action="sr_reserva" method="post" onsubmit="genPDF5()">
           
       <label class="seleccion" for="usuario">CAMPO SELECCIONADO 5</label>
-      <input type="text" class="Ncampo" name="campo_seleccionado" value="campo 5" id="campo_seleccionado" hidden> <!--SE MANTIENE OCULTO PARA EL USUARIO, NOS MANDARA A LA BD QUE ES EL N° DE CAMPO -->
+      <input type="text" class="Ncampo" name="campo_seleccionado" value="campo 5" id="campo_seleccionado5" hidden> <!--SE MANTIENE OCULTO PARA EL USUARIO, NOS MANDARA A LA BD QUE ES EL N° DE CAMPO -->
       <label  for="usuario">NOMBRES</label>
-      <input  class="form"  type="text" name="nombres"  placeholder="Ingrese su nombre" required="" >  <!--required para que no envie formulario vacio--> <!--pattern para pedir que llene algo especifico-->
+      <input  class="form"  type="text" name="nombres" id="nombres5" placeholder="Ingrese su nombre" required="" >  <!--required para que no envie formulario vacio--> <!--pattern para pedir que llene algo especifico-->
       <label for="usuario">APELLIDOS</label>
-      <input class="form" type="text" name="apellidos"  placeholder="Ingrese sus apellidos" required="">
+      <input class="form" type="text" name="apellidos" id="apellidos5" placeholder="Ingrese sus apellidos" required="">
       <label for="usuario">DNI</label>
-      <input class="form" type="number" name="dni" placeholder="Ingrese su DNI" required="" oninput="limitarDNI(this)">
+      <input class="form" type="number" name="dni" id="dni5" placeholder="Ingrese su DNI" required="" oninput="limitarDNI(this)">
        <label for="usuario">NUMERO CELULAR</label>
-      <input class="form" type="number" name="celular" placeholder="Ingrese su numero de celular" required="" oninput="limitarCEL(this)">
+      <input class="form" type="number" name="celular" id="celular5" placeholder="Ingrese su numero de celular" required="" oninput="limitarCEL(this)">
       
        
         
@@ -940,18 +941,18 @@
         </div>
         <div class="modal-body">
               
-      <form action="sr_reserva" method="post">
+      <form action="sr_reserva" method="post" onsubmit="genPDF6()">
           
       <label class="seleccion" for="usuario">CAMPO SELECCIONADO 6</label>
-      <input type="text" class="Ncampo" name="campo_seleccionado" value="campo 6" id="campo_seleccionado" hidden> <!--SE MANTIENE OCULTO PARA EL USUARIO, NOS MANDARA A LA BD QUE ES EL N° DE CAMPO -->
+      <input type="text" class="Ncampo" name="campo_seleccionado" value="campo 6" id="campo_seleccionado6" hidden> <!--SE MANTIENE OCULTO PARA EL USUARIO, NOS MANDARA A LA BD QUE ES EL N° DE CAMPO -->
       <label  for="usuario">NOMBRES</label>
-      <input  class="form"  type="text" name="nombres"  placeholder="Ingrese su nombre" required="">  <!--required para que no envie formulario vacio--> <!--pattern para pedir que llene algo especifico-->
+      <input  class="form"  type="text" name="nombres" id="nombres6" placeholder="Ingrese su nombre" required="">  <!--required para que no envie formulario vacio--> <!--pattern para pedir que llene algo especifico-->
       <label for="usuario">APELLIDOS</label>
-      <input class="form" type="text" name="apellidos"  placeholder="Ingrese sus apellidos" required="">
+      <input class="form" type="text" name="apellidos" id="apellidos6" placeholder="Ingrese sus apellidos" required="">
       <label for="usuario">DNI</label>
-      <input class="form" type="number" name="dni" placeholder="Ingrese su DNI" required="" oninput="limitarDNI(this)">
+      <input class="form" type="number" name="dni" id="dni6" placeholder="Ingrese su DNI" required="" oninput="limitarDNI(this)">
        <label for="usuario">NUMERO CELULAR</label>
-      <input class="form" type="number" name="celular" placeholder="Ingrese su numero de celular" required="" oninput="limitarCEL(this)">
+      <input class="form" type="number" name="celular" id="celular6" placeholder="Ingrese su numero de celular" required="" oninput="limitarCEL(this)">
       
        
         
@@ -1251,6 +1252,253 @@ function marcarCheckbox6() {
 
 
 </script>  
+
+
+<script type="text/javascript">
+    
+        function genPDF() {
+            var doc = new jsPDF();
+            let campo_seleccionado = document.getElementById('campo_seleccionado').value;
+            let nombres = document.getElementById('nombres').value;
+            let apellidos = document.getElementById('apellidos').value;
+            let dni = document.getElementById('dni').value;
+            let celular = document.getElementById('celular').value;
+            let turno = document.getElementById('turno').value;
+            let horas = document.getElementById('horas').value;
+            let totalPagar = document.getElementById('totalPagar').value;
+            let fecha = document.getElementById('fecha').value;
+            let horario = document.getElementById('horario').value;
+            let forma_de_pago = document.getElementById('forma-pago-checkbox').value;
+            let imagen = document.getElementById('imagen').value;
+            
+             let img = new Image();
+             img.onload = function() {
+        doc.addImage(img, 'JPG', 0, 0, doc.internal.pageSize.width, doc.internal.pageSize.height);
+
+           doc.setTextColor(0, 128, 0); // Verde (RGB: 0, 128, 0)
+            doc.text(70, 20, "BOLETA DE RESERVA ");
+            doc.setTextColor(0, 0, 255); // Azul (RGB: 0, 0, 255)
+            doc.text(20, 30, "CAMPO SELECCIONADO: " + campo_seleccionado);
+            doc.text(20, 40, "NOMBRES: " + nombres);
+            doc.text(20, 50, "APELLIDOS: " + apellidos);
+            doc.text(20, 60, "DNI: " + dni);
+            doc.text(20, 70, "CELULAR: " + celular);
+            doc.text(20, 80, "TURNO SELECCIONADO: " + turno);
+            doc.text(20, 90, "HORAS SELECCIONADA: " + horas);
+            doc.text(20, 100, "TOTAL A PAGAR: " + totalPagar);
+            doc.text(20, 110, "FECHA SELECCIONADA: " + fecha);
+            doc.text(20, 120, "HORARIO SELECCIONADO: " + horario);
+            doc.text(20, 130, "FORMA DE PAGO " + forma_de_pago);
+           
+            doc.save('BoletaReserva.pdf');
+        };
+        img.src = 'imagenes/fondoPDF.jpg';
+    } 
+         function genPDF2() {
+            var doc2 = new jsPDF();
+            let campo_seleccionado2 = document.getElementById('campo_seleccionado2').value;
+            let nombres2 = document.getElementById('nombres2').value;
+            let apellidos2 = document.getElementById('apellidos2').value;
+            let dni2 = document.getElementById('dni2').value;
+            let celular2 = document.getElementById('celular2').value;
+            let turno2 = document.getElementById('turno2').value;
+            let horas2 = document.getElementById('horas2').value;
+            let totalPagar2 = document.getElementById('totalPagar2').value;
+            let fecha2 = document.getElementById('fecha2').value;
+            let horario2 = document.getElementById('horario2').value;
+            let forma_de_pago2 = document.getElementById('forma-pago-checkbox2').value;
+            let imagen2 = document.getElementById('imagen2').value;
+            
+            let img2 = new Image();
+             img2.onload = function() {
+        doc2.addImage(img2, 'JPG', 0, 0, doc2.internal.pageSize.width, doc2.internal.pageSize.height);
+            
+           doc2.setTextColor(0, 128, 0); // Verde (RGB: 0, 128, 0)
+            doc2.text(70, 20, "BOLETA DE RESERVA ");
+            doc2.setTextColor(0, 0, 255); // Azul (RGB: 0, 0, 255)
+            doc2.text(20, 30, "CAMPO SELECCIONADO: " + campo_seleccionado2);
+            doc2.text(20, 40, "NOMBRES: " + nombres2);
+            doc2.text(20, 50, "APELLIDOS: " + apellidos2);
+            doc2.text(20, 60, "DNI: " + dni2);
+            doc2.text(20, 70, "CELULAR: " + celular2);
+            doc2.text(20, 80, "TURNOS SELECCIONADO: " + turno2);
+            doc2.text(20, 90, "HORAS SELECCIONADA: " + horas2);
+            doc2.text(20, 100, "TOTAL A PAGAR: " + totalPagar2);
+            doc2.text(20, 110, "FECHA SELECCIONADA: " + fecha2);
+            doc2.text(20, 120, "HORARIO SELECCIONADO: " + horario2);
+            doc2.text(20, 130, "FORMA DE PAGO " + forma_de_pago2);
+           
+            doc2.save('BoletaReserva.pdf');
+        };
+        img2.src = 'imagenes/fondoPDF.jpg';
+    } 
+        
+        
+         function genPDF3() {
+            var doc3 = new jsPDF();
+            let campo_seleccionado3 = document.getElementById('campo_seleccionado3').value;
+            let nombres3 = document.getElementById('nombres3').value;
+            let apellidos3 = document.getElementById('apellidos3').value;
+            let dni3 = document.getElementById('dni3').value;
+            let celular3 = document.getElementById('celular3').value;
+            let turno3 = document.getElementById('turno3').value;
+            let horas3 = document.getElementById('horas3').value;
+            let totalPagar3 = document.getElementById('totalPagar3').value;
+            let fecha3 = document.getElementById('fecha3').value;
+            let horario3 = document.getElementById('horario3').value;
+            let forma_de_pago3 = document.getElementById('forma-pago-checkbox3').value;
+            let imagen3 = document.getElementById('imagen3').value;
+            
+              let img3 = new Image();
+             img3.onload = function() {
+        doc3.addImage(img3, 'JPG', 0, 0, doc3.internal.pageSize.width, doc3.internal.pageSize.height);
+            
+            
+           doc3.setTextColor(0, 128, 0); // Verde (RGB: 0, 128, 0)
+            doc3.text(70, 20, "BOLETA DE RESERVA ");
+            doc3.setTextColor(0, 0, 255); // Azul (RGB: 0, 0, 255)
+            doc3.text(20, 30, "CAMPO SELECCIONADO: " + campo_seleccionado3);
+            doc3.text(20, 40, "NOMBRES: " + nombres3);
+            doc3.text(20, 50, "APELLIDOS: " + apellidos3);
+            doc3.text(20, 60, "DNI: " + dni3);
+            doc3.text(20, 70, "CELULAR: " + celular3);
+            doc3.text(20, 80, "TURNOS SELECCIONADO: " + turno3);
+            doc3.text(20, 90, "HORAS SELECCIONADA: " + horas3);
+            doc3.text(20, 100, "TOTAL A PAGAR: " + totalPagar3);
+            doc3.text(20, 110, "FECHA SELECCIONADA: " + fecha3);
+            doc3.text(20, 120, "HORARIO SELECCIONADO: " + horario3);
+            doc3.text(20, 130, "FORMA DE PAGO " + forma_de_pago3);
+           
+            doc3.save('BoletaReserva.pdf');
+        };
+        img3.src = 'imagenes/fondoPDF.jpg';
+    } 
+        
+        
+function genPDF4() {
+var doc4 = new jsPDF();
+let campo_seleccionado4 = document.getElementById('campo_seleccionado4').value;
+let nombres4 = document.getElementById('nombres4').value;
+let apellidos4 = document.getElementById('apellidos4').value;
+let dni4 = document.getElementById('dni4').value;
+let celular4 = document.getElementById('celular4').value;
+let turno4 = document.getElementById('turno4').value;
+let horas4 = document.getElementById('horas4').value;
+let totalPagar4 = document.getElementById('totalPagar4').value;
+let fecha4 = document.getElementById('fecha4').value;
+let horario4 = document.getElementById('horario4').value;
+let forma_de_pago4 = document.getElementById('forma-pago-checkbox4').value;
+let imagen4 = document.getElementById('imagen4').value;
+
+ let img4 = new Image();
+    img4.onload = function() {
+        doc4.addImage(img4, 'JPG', 0, 0, doc4.internal.pageSize.width, doc4.internal.pageSize.height);
+
+
+doc4.setTextColor(0, 128, 0); // Verde (RGB: 0, 128, 0)
+doc4.text(70, 20, "BOLETA DE RESERVA ");
+doc4.setTextColor(0, 0, 255); // Azul (RGB: 0, 0, 255)
+doc4.text(20, 30, "CAMPO SELECCIONADO: " + campo_seleccionado4);
+doc4.text(20, 40, "NOMBRES: " + nombres4);
+doc4.text(20, 50, "APELLIDOS: " + apellidos4);
+doc4.text(20, 60, "DNI: " + dni4);
+doc4.text(20, 70, "CELULAR: " + celular4);
+doc4.text(20, 80, "TURNOS SELECCIONADO: " + turno4);
+doc4.text(20, 90, "HORAS SELECCIONADA: " + horas4);
+doc4.text(20, 100, "TOTAL A PAGAR: " + totalPagar4);
+doc4.text(20, 110, "FECHA SELECCIONADA: " + fecha4);
+doc4.text(20, 120, "HORARIO SELECCIONADO: " + horario4);
+doc4.text(20, 130, "FORMA DE PAGO " + forma_de_pago4);
+
+doc4.save('BoletaReserva.pdf');
+};
+        img4.src = 'imagenes/fondoPDF.jpg';
+    } 
+
+        
+        function genPDF5() {
+    var doc5 = new jsPDF();
+    let campo_seleccionado5 = document.getElementById('campo_seleccionado5').value;
+    let nombres5 = document.getElementById('nombres5').value;
+    let apellidos5 = document.getElementById('apellidos5').value;
+    let dni5 = document.getElementById('dni5').value;
+    let celular5 = document.getElementById('celular5').value;
+    let turno5 = document.getElementById('turno5').value;
+    let horas5 = document.getElementById('horas5').value;
+    let totalPagar5 = document.getElementById('totalPagar5').value;
+    let fecha5 = document.getElementById('fecha5').value;
+    let horario5 = document.getElementById('horario5').value;
+    let forma_de_pago5 = document.getElementById('forma-pago-checkbox5').value;
+    let imagen5 = document.getElementById('imagen5').value;
+
+     let img5 = new Image();
+    img5.onload = function() {
+        doc5.addImage(img5, 'JPG', 0, 0, doc5.internal.pageSize.width, doc5.internal.pageSize.height);
+
+
+    doc5.setTextColor(0, 128, 0); // Verde (RGB: 0, 128, 0)
+    doc5.text(70, 20, "BOLETA DE RESERVA ");
+    doc5.setTextColor(0, 0, 255); // Azul (RGB: 0, 0, 255)
+    doc5.text(20, 30, "CAMPO SELECCIONADO: " + campo_seleccionado5);
+    doc5.text(20, 40, "NOMBRES: " + nombres5);
+    doc5.text(20, 50, "APELLIDOS: " + apellidos5);
+    doc5.text(20, 60, "DNI: " + dni5);
+    doc5.text(20, 70, "CELULAR: " + celular5);
+    doc5.text(20, 80, "TURNOS SELECCIONADO: " + turno5);
+    doc5.text(20, 90, "HORAS SELECCIONADA: " + horas5);
+    doc5.text(20, 100, "TOTAL A PAGAR: " + totalPagar5);
+    doc5.text(20, 110, "FECHA SELECCIONADA: " + fecha5);
+    doc5.text(20, 120, "HORARIO SELECCIONADO: " + horario5);
+    doc5.text(20, 130, "FORMA DE PAGO " + forma_de_pago5);
+
+    doc5.save('BoletaReserva.pdf');
+};
+        img5.src = 'imagenes/fondoPDF.jpg';
+    }
+
+        function genPDF6() {
+    var doc6 = new jsPDF();
+    let campo_seleccionado6 = document.getElementById('campo_seleccionado6').value;
+    let nombres6 = document.getElementById('nombres6').value;
+    let apellidos6 = document.getElementById('apellidos6').value;
+    let dni6 = document.getElementById('dni6').value;
+    let celular6 = document.getElementById('celular6').value;
+    let turno6 = document.getElementById('turno6').value;
+    let horas6 = document.getElementById('horas6').value;
+    let totalPagar6 = document.getElementById('totalPagar6').value;
+    let fecha6 = document.getElementById('fecha6').value;
+    let horario6 = document.getElementById('horario6').value;
+    let forma_de_pago6 = document.getElementById('forma-pago-checkbox6').value;
+    let imagen6 = document.getElementById('imagen6').value;
+    
+      let img6 = new Image();
+    img6.onload = function() {
+        doc6.addImage(img6, 'JPG', 0, 0, doc6.internal.pageSize.width, doc6.internal.pageSize.height);
+
+
+    doc6.setTextColor(0, 128, 0); // Verde (RGB: 0, 128, 0)
+    doc6.text(70, 20, "BOLETA DE RESERVA ");
+    doc6.setTextColor(0, 0, 255); // Azul (RGB: 0, 0, 255)
+    doc6.text(20, 30, "CAMPO SELECCIONADO: " + campo_seleccionado6);
+    doc6.text(20, 40, "NOMBRES: " + nombres6);
+    doc6.text(20, 50, "APELLIDOS: " + apellidos6);
+    doc6.text(20, 60, "DNI: " + dni6);
+    doc6.text(20, 70, "CELULAR: " + celular6);
+    doc6.text(20, 80, "TURNOS SELECCIONADO: " + turno6);
+    doc6.text(20, 90, "HORAS SELECCIONADA: " + horas6);
+    doc6.text(20, 100, "TOTAL A PAGAR: " + totalPagar6);
+    doc6.text(20, 110, "FECHA SELECCIONADA: " + fecha6);
+    doc6.text(20, 120, "HORARIO SELECCIONADO: " + horario6);
+    doc6.text(20, 130, "FORMA DE PAGO " + forma_de_pago6);
+
+    doc6.save('BoletaReserva.pdf');
+};
+        img6.src = 'imagenes/fondoPDF.jpg';
+    }
+
+        
+    </script>
+
  
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.all.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
